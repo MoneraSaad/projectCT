@@ -1,0 +1,19 @@
+{
+  "name": "ProjectB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@react-google-maps/api": "^2.0.2",
+    "express": "^4.17.1",
+    "google-map-react": "^2.1.9",
+    "mongoose": "^5.10.11",
+    "react-google-maps": "^9.4.5"
+  }
+}
