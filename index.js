@@ -19,7 +19,7 @@ app.use(express.static("public"));
 // var secret = 'abcdefghujklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*()_+';
 // module.exports = secret;
 // app.use(cookies());
-const url = "mongodb+srv://Monera:35719523571952@cluster0.gkvm6.mongodb.net/serverP";
+const url = "mongodb+srv://Monera:kkkkkkkkkkkk@cluster0.gkvm6.mongodb.net/serverP";
 const mongoose = require("mongoose");
 mongoose.connect(url, {
   useNewUrlParser: true,
