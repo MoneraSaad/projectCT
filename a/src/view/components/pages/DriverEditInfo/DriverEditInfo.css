@@ -1,0 +1,610 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body{
+    background-color: #F0F0F0;
+  }
+
+  #r{
+    margin-left: -80px;
+    text-align: center;
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 10px 24px;
+    width: 150px;
+    font-size: 20px;
+    height: 50px;
+  }
+  
+  .container{
+    background-color: #f5fafa;
+    width:1650px;
+    height: 700px;
+    margin:0 auto;
+    margin-top:40px;
+    border-radius: 40px;
+  }
+  
+  .title-form{
+    background-color: #284b4a;
+    padding:20px;
+    border-radius: 10px 10px 0 0; 
+    color:white;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+  }
+  
+  .Driver-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:repeat(5,1fr);
+    padding: 30px 10px 30px 10px;
+  }
+  
+  .field-form{
+    display:flex;
+    padding:15px;
+  }
+  .field-form input[type="text"]{
+    flex:1;
+    padding-left: 10px;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    word-spacing:2px;
+  }
+  .field-form input[type="text"]:focus{
+   border: 2px solid #5DAAA7;
+  }
+  /*---GENDER FIELD---*/
+/*   .gender-field{
+    justify-content: space-evenly;
+    align-items:center;
+  }
+  .gender-field div{
+    border: none;
+    padding: 6px 15px;
+    margin-right:20px;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    color:rgba(0,0,0,0.7);
+  }
+  .gender-field div span{
+    margin-right: 10px;
+    font-size:0.9em;
+  }
+  .gender-field div input{
+    transform: translateY(2px);
+  }
+
+  .birthday-field{
+    justify-content: space-between;
+    align-items:center;
+  }
+  .birthday-field span{
+    color:rgba(0,0,0,0.7);
+  }
+  select{
+    height: 2.6em;
+    padding: 0 25px 0 5px;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+    color: rgba(0,0,0,0.7);
+  }
+  .birthday-field > select{
+    padding: 0 10px 0 5px;
+  } */
+  /* ADDRESS */
+  .address{
+    padding:10px 15px 0 15px;
+  }
+  textarea{
+    flex:1;
+    outline:none;
+    border:none;
+    border-radius:5px;
+    resize:none;
+    padding:10px;
+  }
+  /*--YEAR/SECTION--*/
+  .year-section{
+    justify-content:space-evenly;
+    align-items:center;
+  }
+  /*--BUTTON--*/
+  .button{
+    display:flex;
+    justify-content: flex-end;
+    padding:30px 30px 0 0;
+  }
+  .add{
+    padding: 10px 10px;
+    border:none;
+    font-weight: bold;
+    border-radius:5px;
+    background-color: #5DAAA7;
+    color:rgb(17, 16, 16);
+    letter-spacing: 2px;
+  }
+  /*--LAYOUT ARRANGEMENT(GRID)--*/
+  .field-form:nth-child(1){
+    grid-column: 2/3;
+    grid-row:1/2;
+  }
+  .field-form:nth-child(2){
+    grid-column: 1/2;
+    grid-row:1/2;  
+  }
+  .field-form:nth-child(3){
+    grid-column: 1/2;
+    grid-row:2/3;   
+  }
+  .field-form:nth-child(4){
+    grid-column: 1/2;
+    grid-row:3/4;  
+  }
+  .field-form:nth-child(5){
+    grid-column: 1/2;
+    grid-row:4/5;  
+  }
+  .field-form:nth-child(6){
+    grid-column: 1/2;
+    grid-row:5/6;  
+  }
+  .field-form:nth-child(7){
+    grid-column: 2/3;
+    grid-row:2/3;  
+  }
+  .field-form:nth-child(8){
+    grid-column: 2/3;
+    grid-row:3/4;   
+  }
+  .field-form:nth-child(9){
+    grid-column: 2/3;
+    grid-row:4/5;  
+  }.field-form:nth-child(10){
+    grid-column: 2/3;
+    grid-row:5/6;  
+  }
+  
+  @media (max-width:750px){
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .container{
+    background-color: #AED3D4;
+    width:800px;
+    margin:0 auto;
+    margin-top:30px;
+    border-radius: 10px;
+  }
+  
+  .title-form{
+    background-color: #5DAAA7;
+    padding:15px 40px;
+    border-radius: 10px 10px 0 0; 
+    color:white;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+  }
+  
+  .Driver-form{
+    display:grid;
+    grid-template-columns:10fr 10fr;
+    grid-template-rows:repeat(5,1fr);
+    padding: 30px 10px 20px 30px;
+  }
+  
+  .field-form{
+    display:flex;
+    padding:30px;
+  }
+  .field-form input[type="text"]{
+    flex:1;
+    padding-left: 10px;
+    outline: none;
+    border:none;
+    border-radius: 10px;
+    word-spacing:2px;
+  }
+  .field-form input[type="text"]:focus{
+   border: 2px solid #5DAAA7;
+  }
+  /*---GENDER FIELD---*/
+  .gender-field{
+    justify-content: space-evenly;
+    align-items:center;
+  }
+  .gender-field div{
+    border: none;
+    padding: 6px 10px;
+    margin-right:20px;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    color:rgba(0,0,0,0.7);
+  }
+  .gender-field div span{
+    margin-right: 10px;
+  }
+  .gender-field div input{
+    transform: translateY(2px);
+  }
+  /*---BIRTHDAY FIELD---*/
+  .birthday-field{
+    justify-content: space-evenly;
+    align-items:center;
+  }
+  .birthday-field span{
+    color:rgba(0,0,0,0.7);
+  }
+  select{
+    height: 2.3em;
+    padding: 0 15px 0 5px;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+    color: rgba(0,0,0,0.7);
+    margin:0 4px;
+  }
+  .birthday-field > select{
+    margin: 0 4px;
+  }
+    /* ADDRESS */
+  .address{
+    padding:10px 15px 0 15px;
+  }
+  textarea{
+    flex:1;
+    outline:none;
+    border:none;
+    border-radius:5px;
+    resize:none;
+    padding:5px;
+  }
+  /*--YEAR/SECTION--*/
+  .year-section{
+    justify-content:space-evenly;
+    align-items:center;
+  }
+  /*--BUTTON--*/
+  .button{
+    display:flex;
+    justify-content: flex-end;
+    padding:30px 15px 0 0;
+  }
+  .add{
+    padding: 0 20px;
+    border:none;
+    border-radius:5px;
+    background-color: #5DAAA7;
+    color:white;
+    letter-spacing: 2px;
+  }
+  /*--LAYOUT ARRANGEMENT(GRID)--*/
+  .field-form:nth-child(1){
+    grid-column: 2/3;
+    grid-row:1/2;
+  }
+  .field-form:nth-child(2){
+    grid-column: 1/2;
+    grid-row:1/2;  
+  }
+  .field-form:nth-child(3){
+    grid-column: 1/2;
+    grid-row:2/3;   
+  }
+  .field-form:nth-child(4){
+    grid-column: 1/2;
+    grid-row:3/4;  
+  }
+  .field-form:nth-child(5){
+    grid-column: 1/2;
+    grid-row:4/5;  
+  }
+  .field-form:nth-child(6){
+    grid-column: 1/2;
+    grid-row:5/6;  
+  }
+  .field-form:nth-child(7){
+    grid-column: 2/3;
+    grid-row:2/3;  
+  }
+  .field-form:nth-child(8){
+    grid-column: 2/3;
+    grid-row:3/4;   
+  }
+  .field-form:nth-child(9){
+    grid-column: 2/3;
+    grid-row:4/5;  
+  }.field-form:nth-child(10){
+    grid-column: 2/3;
+    grid-row:5/6;  
+  }
+
+  }
+    
+    @media (max-width:800px){
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Open Sans', sans-serif;
+      }
+  
+      .container{
+        background-color: #AED3D4;
+        width:400px;
+        margin:20px auto;
+        border-radius: 10px;
+      }
+  
+      .title-form{
+        background-color: #5DAAA7;
+        padding:10px 30px;
+        border-radius:10px 10px 0 0; 
+        color:white;
+        word-spacing: 5px;
+        letter-spacing: 2px;
+      }
+  
+      .Driver-form{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+        padding: 25px 10px 20px 10px;
+      }
+      .field-form{
+        display:flex;
+        padding:15px;
+      }
+      .field-form input[type="text"]{
+        flex:1;
+        padding-left: 10px;
+        outline: none;
+        border:none;
+        border-radius: 5px;
+        word-spacing:2px;
+        height:2.5em;
+        font-size: 0.9em;
+      }
+      .field-form input[type="text"]:focus{
+       border: 2px solid #5DAAA7;
+      }
+      /*---GENDER FIELD---*/
+      .gender-field{
+        justify-content: space-evenly;
+        align-items:center;
+      }
+      .gender-field div{
+        border: none;
+        padding: 6px 10px;
+        margin-right:20px;
+        border-radius: 5px;
+        background-color: white;
+        cursor: pointer;
+        color:rgba(0,0,0,0.7);
+      }
+      .gender-field div span{
+        margin-right: 10px;
+      }
+      .gender-field div input{
+        transform: translateY(2px);
+      }
+      /*---BIRTHDAY FIELD---*/
+      .birthday-field{
+        justify-content: space-between;
+        align-items:center;
+      }
+      .birthday-field span{
+        color:rgba(0,0,0,0.7);
+      }
+      select{
+        height: 2.3em;
+        padding: 0 15px 0 5px;
+        border-radius: 5px;
+        border:none;
+        outline:none;
+        color: rgba(0,0,0,0.7);
+        margin:0 4px;
+      }
+      .birthday-field > select{
+        margin: 0 4px;
+      }
+        /* ADDRESS */
+      .address{
+        padding:10px 15px 0 15px;
+        margin-bottom:15px;
+      }
+      textarea{
+        flex:1;
+        outline:none;
+        border:none;
+        border-radius:5px;
+        resize:none;
+        padding:5px;
+        height:5em;
+      }
+      /*--YEAR/SECTION--*/
+      .year-section{
+        justify-content:space-evenly;
+        align-items:center;
+      }
+      /*--BUTTON--*/
+      .button{
+        display:flex;
+        justify-content: flex-end;
+        padding:10px 15px 0 0;
+      }
+      .add{
+        margin-top:10px;
+        padding: 10px 20px;
+        border:none;
+        border-radius:5px;
+        background-color: #5DAAA7;
+        color:white;
+        letter-spacing: 2px;
+      }    
+      /*--LAYOUT ARRANGEMENT(GRID)--*/
+      .field-form:nth-child(1){
+        grid-column: 1/2;
+        grid-row:1/2;
+      }
+      .field-form:nth-child(2){
+        grid-column: 1/2;
+        grid-row:2/3;  
+      }
+      .field-form:nth-child(3){
+        grid-column: 1/2;
+        grid-row:3/4;   
+      }
+      .field-form:nth-child(4){
+        grid-column: 1/2;
+        grid-row:4/5;  
+      }
+      .field-form:nth-child(5){
+        grid-column: 1/2;
+        grid-row:5/6;  
+      }
+      .field-form:nth-child(6){
+        grid-column: 1/2;
+        grid-row:6/7;  
+      }
+      .field-form:nth-child(7){
+        grid-column: 1/2;
+        grid-row:7/8;  
+      }
+      .field-form:nth-child(8){
+        grid-column: 1/2;
+        grid-row:8/9;   
+      }
+      .field-form:nth-child(9){
+        grid-column: 1/2;
+        grid-row:9/10;  
+      }
+      .field-form:nth-child(10){
+        grid-column: 1/2;
+        grid-row:10/11;  
+      }
+  }
+  
+  @media (max-width:440px){
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Open Sans', sans-serif;
+      }
+  
+      .container{
+        background-color: #AED3D4;
+        width:100%;
+        margin:0 auto;
+        border-radius:0;
+    }
+  
+      .title-form{
+        background-color: #5DAAA7;
+        padding:10px 30px;
+        border-radius: 0; 
+        color:white;
+        word-spacing: 5px;
+        letter-spacing: 2px;
+      }
+  
+      .Driver-form{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+        padding: 25px 10px 20px 10px;
+      }
+      .field-form{
+        display:flex;
+      }
+      .field-form input[type="text"]{
+        flex:1;
+        padding-left: 10px;
+        outline: none;
+        border:none;
+        border-radius: 5px;
+        word-spacing:2px;
+        height:2.5em;
+        font-size: 0.9em;
+      }
+      .field-form input[type="text"]:focus{
+       border: 2px solid #5DAAA7;
+      }
+      /*---GENDER FIELD---*/
+      .gender-field{
+        justify-content: space-between;
+        align-items:center;
+      }
+      .gender-field div{
+        border: none;
+        padding: 6px 10px;
+        margin-right:20px;
+        border-radius: 5px;
+        background-color: white;
+        cursor: pointer;
+        color:rgba(0,0,0,0.7);
+      }
+      .gender-field div span{
+        margin-right: 10px;
+      }
+      .gender-field div input{
+        transform: translateY(2px);
+      }
+      /*---BIRTHDAY FIELD---*/
+      .birthday-field{
+        justify-content: space-between;
+        align-items:center;
+      }
+      .birthday-field span{
+        color:rgba(0,0,0,0.7);
+      }
+      select{
+        height: 2.3em;
+        padding: 0 15px 0 5px;
+        border-radius: 5px;
+        border:none;
+        outline:none;
+        color: rgba(0,0,0,0.7);
+        margin:0 4px;
+      }
+      .birthday-field > select{
+        margin: 0 4px;
+      }
+      /*--YEAR/SECTION--*/
+      .year-section{
+        justify-content:space-evenly;
+        align-items:center;
+      }
+      /*--BUTTON--*/
+      .button{
+        display:flex;
+        justify-content: flex-end;
+        padding:10px 15px 0 0;
+      }
+      .add{
+        padding: 10px 20px;
+        border:none;
+        border-radius:5px;
+        background-color: #5DAAA7;
+        color:white;
+        letter-spacing: 2px;
+      }    
+  }
+  
+  
+  

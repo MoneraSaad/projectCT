@@ -1,0 +1,6 @@
+.container h-100 {
+    background-image: linear-gradient(to right top, #2980b9, #2c86c1, #2e8cca, #3192d2, #3498db);
+	height: 100vh;
+	min-height: 100vh;
+	padding-top: 3.5em;
+}
