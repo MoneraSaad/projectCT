@@ -177,11 +177,11 @@ function SignUp() {
           <Form.Group as={Row}>
             <Form.Label column sm="2" htmlFor="email" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
             <Col sm="4">
-              <Form.Control className="form-control" type="email" id="email" name="email" placeholder="" required style={{ borderBottom: " 2px solid orange" }}></Form.Control><br></br>
+              <Form.Control className="form-control" type="email" id="email" name="email" placeholder="Email" required style={{ borderBottom: " 2px solid orange" }}></Form.Control><br></br>
             </Col>
             <Form.Label column sm="2" htmlFor="password" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Password: </Form.Label>
             <Col sm="4">
-              <Form.Control className="form-control" id="password" name="password" type="password" placeholder="" required style={{ borderBottom: " 2px solid orange" }}></Form.Control><br></br>
+              <Form.Control className="form-control" id="password" name="password" type="text" placeholder="Password" required style={{ borderBottom: " 2px solid orange" }}></Form.Control><br></br>
             </Col>
           </Form.Group>
 

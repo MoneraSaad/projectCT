@@ -10,7 +10,7 @@ function AccompanyingPersonPage() {
   let AccompanyingPerson = localStorage.getItem("userID");
 
   function handleAccAbsentBtn() {
-    history.replace("/AccompanyingPersonAbsentPage");
+    history.replace("/AccompanyingAttendance");
   }
   function handleChildrenCardsBtn() {
     history.replace("/AccompanyingPersonChildCard");
@@ -76,13 +76,13 @@ function handleLogOut() {
         <Button variant="dark" size="lg" type="button" onClick={handleChildrenCardsBtn} >Children Cards</Button>
         <br></br>
         <br></br>
-        <Button variant="dark" size="lg" type="button" onClick={handleAccAbsentBtn} >Submit Absent Status</Button>
+        <Button variant="dark" size="lg" type="button" onClick={handleAccAbsentBtn} >Submit Attendance Status</Button>
         <br></br>
         <br></br>
         <Button variant="dark" size="lg" type="button" onClick={handleAccompanyingPTrack} >Track Vehicle </Button>
         <br></br>
         <br></br>
-        <a href="https://api.whatsapp.com/send?phone=+9720548145257&text=&source=&data=" class="whatsApp" target="_blank"><i class="fa fa-whatsapp my-whatsApp">Contact</i></a>
+        <a href="https://api.whatsapp.com/send?phone=+9720548145257&text=&source=&data=" className="whatsApp" target="_blank"><i class="fa fa-whatsapp my-whatsApp">Contact</i></a>
         <br></br>
         <br></br>
       </Container>

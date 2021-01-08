@@ -7,13 +7,11 @@ const ChildrenCardModel = mongoose.model("ChildrenCardModel", ChildrenCardSchema
 
 
 router.post('/editChildCard', (req, res) => {
-    console.log("serever side has been reached ")
+  
     const { childInfo, fatherInfo, motherInfo } = req.body;
-    console.log(childInfo);
-    console.log(fatherInfo);
-    console.log(motherInfo);
+  
     ChildrenCardModel.find({ "ChildInfo.childID": childInfo.childID }).then(checkUserName => {
-        console.log(checkUserName);
+        
         if (checkUserName.length > 0) {
 
             res.send({ success: true, error: null })
@@ -51,10 +49,11 @@ router.post('/editChildCard', (req, res) => {
                     email: "Tamar@gmail.com"
                 },
                 AccompanyingPersonInfo: {
-                    firstName: "Annie",
-                    lastName: "Arman",
-                    phoneNum: "0506756748",
-                    email: "Annie@gmail.com",
+                    firstName: "Anne",
+                    lastName: "Cohen",
+                    idNumber:"208674859",
+                    phoneNum: "0502883755",
+                    email: "Anne@gmail.com",
                     gender: "Female",
                 },
                 schoolInfo: {
@@ -78,12 +77,12 @@ router.post('/editChildCard', (req, res) => {
 
 //getMyChildInfo
 router.post('/getMyChildInfo', (req, res) => {
-    console.log("serever side function getMyChildInfo")
+    
     const { userID } = req.body;
-    console.log(userID);
+    
     let childInformation = [];
     ChildrenCardModel.find({ "FatherInfo.fatherID": userID }).then(docs => {
-        console.log(docs);
+        
         if (docs.length > 0) {
 
             let childInfo = {
@@ -130,13 +129,13 @@ router.post('/getMyChildInfo', (req, res) => {
             };
 
             childInformation.push(childInfo, fatherInfo, motherInfo, accompanyingPersonInfo, schoolInfo);
-            console.log("childInformation in success=true FatherID");
-            console.log(childInformation);
+         
             res.send({ success: true, error: null, info: childInformation });
 
         } else {
+            
             ChildrenCardModel.find({ "MotherInfo.motherID": userID }).then(docs => {
-                console.log(docs);
+               
                 if (docs.length > 0) {
 
                     let childInfo = {
@@ -183,60 +182,11 @@ router.post('/getMyChildInfo', (req, res) => {
                     };
 
                     childInformation.push(childInfo, fatherInfo, motherInfo, accompanyingPersonInfo, schoolInfo);
-                    console.log("childInformation in success=true MotherID");
-                    console.log(childInformation);
+                  
                     res.send({ success: true, error: null, info: childInformation });
 
                 } else {
 
-
-                    /*           let childInfo = {
-   
-                    
-                   childName: 'Mor',
-                   childLastName: "Ben Zaken",
-                   childID: "206454454",
-                   streetAdrees1: "Haifa,street1-70,home number 10",
-                   streetAdrees2: "Haifa,street1-70,home number 10",
-                   city: "Haifa",
-                   zipCode: "3244680",
-                   gender: "Female",
-               };
-               let fatherInfo = {
-                   firstName: "Tal",
-                   lastName: "Ben Zaken",
-                   fatherID: "543343227",
-                   phoneNum: "0502348755",
-                   homeAdrees: "Haifa,street1-70,home number 10",
-                   email: "Tal@gmail.com"
-               };
-   
-               let motherInfo = {
-                   firstName: "Aleen",
-                   lastName: "Ben Zaken",
-                   motherID: "201232122",
-                   phoneNum: "0534536644",
-                   homeAdrees: "Haifa street1-34,home number 4",
-                   email: "Aleen@gmail.com"
-               };
-               let accompanyingPersonInfo = {
-                   firstName: "Annie",
-                   lastName: "Arman",
-                   phoneNum: "0506756748",
-                   email: "Annie@gmail.com",
-                   gender: "Female",
-               };
-               let schoolInfo = {
-                   schoolName: "Haifa Elementary School",
-                   SchoolAdministrator: "Helen Cohen",
-                   phoneNum: "047826467",
-                   Adress: "Haifa,street1-78",
-               }; 
-   
-               childInformation.push(childInfo,fatherInfo,motherInfo,accompanyingPersonInfo,schoolInfo);
-               console.log("childInformation in success=false");
-                var data = new ChildrenCardModel({ ChildInfo: childInfo, FatherInfo: fatherInfo, MotherInfo: motherInfo, AccompanyingPersonInfo: accompanyingPersonInfo, SchoolInfo: schoolInfo });
-                data.save(); */
                     res.send({ success: false, error: true, info: null });
 
                 }//else no such motherId and fatherID
@@ -251,12 +201,12 @@ router.post('/getMyChildInfo', (req, res) => {
 
 //getAllChildrensCards
 router.post('/getAllChildrensCards', (req, res) => {
-    console.log("serever side function getAllChildrensCards")
+  
     const { userRole } = req.body;
-    console.log(userRole);
+   
     let childrenInformation = [];
     ChildrenCardModel.find().then(docs => {
-        console.log(docs);
+      
         if (docs.length > 0) {
 
             res.send({ success: true, error: null, info: docs });
@@ -316,5 +266,61 @@ router.post('/getAllChildrensCards', (req, res) => {
     })
 }
 )
+
+
+//getMyChildInfo
+router.post('/getAccompanyingPersonPhone', (req, res) => {
+    
+    const { userID } = req.body;
+    
+    let childInformation = [];
+    ChildrenCardModel.find({ "FatherInfo.fatherID": userID }).then(docs => {
+        
+        if (docs.length > 0) {
+
+           
+            let accompanyingPersonInfo = {
+                firstName: docs[0].AccompanyingPersonInfo.firstName,
+                lastName: docs[0].AccompanyingPersonInfo.lastName,
+                phoneNum: docs[0].AccompanyingPersonInfo.phoneNum,
+                email: docs[0].AccompanyingPersonInfo.email,
+                gender: docs[0].AccompanyingPersonInfo.gender
+            };
+
+
+            childInformation.push(accompanyingPersonInfo);
+         
+            res.send({ success: true, error: null, info: childInformation });
+
+        } else {
+            ChildrenCardModel.find({ "MotherInfo.motherID": userID }).then(docs => {
+               
+                if (docs.length > 0) {
+
+                    let accompanyingPersonInfo = {
+                        firstName: docs[0].AccompanyingPersonInfo.firstName,
+                        lastName: docs[0].AccompanyingPersonInfo.lastName,
+                        phoneNum: docs[0].AccompanyingPersonInfo.phoneNum,
+                        email: docs[0].AccompanyingPersonInfo.email,
+                        gender: docs[0].AccompanyingPersonInfo.gender
+                    };
+                    childInformation.push(accompanyingPersonInfo);
+                  
+                    res.send({ success: true, error: null, info: childInformation });
+
+                } else {
+
+                    res.send({ success: false, error: true, info: null });
+
+                }//else no such motherId and fatherID
+
+
+
+            })//find according to motherID
+        }//else for searching about motherID
+    })//find according to fatherID
+    
+})
+
 
 module.exports = router;

@@ -34,6 +34,7 @@ const ChildrenCardSchema = new mongoose.Schema({
         phoneNum:String,
         email:String,
         gender:String,
+        userID:String
     },
     SchoolInfo :{
         schoolName:String,

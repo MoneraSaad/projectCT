@@ -8,13 +8,7 @@ function TransportationManager() {
   const history = useHistory();
 
 
-  function handleTransportationManagerSubListBtn() {
-    history.replace("/TransportationManagerSubList");
-  }
 
-  function handleabsent() {
-    history.replace("/TransportationManagerAbsentPage");
-  }
   function handleWhatsapp() {
     let vehicleCompanyManager;
     let transportationManagerID = localStorage.getItem("userID");
@@ -96,16 +90,10 @@ function handleLogOut() {
           </Nav>
         </Navbar>
         <h4 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman" }}>Welcome Transportation Manager</h4><br></br>
-        <Button variant="dark" size="lg" type="button" onClick={handleabsent} >Submit Absent Status</Button>
-        <br></br>
-        <br></br>
         <Button variant="dark" size="lg" type="button" >Plan Route</Button>
         <br></br>
         <br></br>
         <Button variant="dark" size="lg" type="button" onClick={handleTransportationManagerTrack} >Track Vehcile</Button>
-        <br></br>
-        <br></br>
-        <Button variant="dark" size="lg" type="button" onClick={handleTransportationManagerSubListBtn} >Subtitutes List</Button>
         <br></br>
         <br></br>
         <Button variant="dark" size="lg" type="button" onClick={handleWhatsapp}>Contact Vehicle Company Manager</Button>
