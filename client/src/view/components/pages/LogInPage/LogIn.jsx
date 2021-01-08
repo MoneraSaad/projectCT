@@ -73,7 +73,7 @@ function LogIn() {
                 <Form.Text id="passwordHelpBlock" muted>
                     Sign In
                 </Form.Text>
-            <img alt="" src={process.env.PUBLIC_URL + "childTransportLogo.png"} style={{width:"50%",height:"50%",border:"0px solid white",borderRadius:"30px 30px 30px 30px"}}></img><br></br>
+            {/* <img alt="" src={process.env.PUBLIC_URL + "childTransportLogo.png"} style={{width:"50%",height:"50%",border:"0px solid white",borderRadius:"30px 30px 30px 30px"}}></img><br></br> */}
 
             <Form onSubmit={handleLogInBtn}>
             <br></br>
