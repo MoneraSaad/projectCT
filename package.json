@@ -1,5 +1,5 @@
 {
-  "name": "ProjectB",
+  "name": "ProjectCT",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,9 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "@react-google-maps/api": "^2.0.2",
+    "bootstrap": "^4.5.3",
     "express": "^4.17.1",
     "google-map-react": "^2.1.9",
-    "mongoose": "^5.10.11",
+    "mongoose": "^5.11.10",
+    "react-bootstrap": "^1.4.3",
     "react-google-maps": "^9.4.5"
   }
 }
