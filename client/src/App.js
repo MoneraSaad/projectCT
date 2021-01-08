@@ -3,19 +3,21 @@ import Login from "./view/components/pages/LogInPage/LogIn";
 import ForgotPassword from "./view/components/pages/ForgotPassword/ForgotPassword";
 import SignUp from "./view/components/pages/SignUp/SignUp";
 import ParentHomePage from "./view/components/pages/ParentHomePage/ParentHomePage" ; 
-import MyChildCard from "./view/components/pages/MyChildCard/MyChildCard";
+// import MyChildCard from "./view/components/pages/MyChildCard/MyChildCard";
+
+import SettingsPage from "./view/components/pages/SettingsPage/SettingsPage";
+import SettingsPageUsers from "./view/components/pages/SettingsPageUsers/SettingsPageUsers";
+import SettingsPageAccompanyingPerson from"./view/components/pages/SettingsPageAccompanyingPerson/SettingsPageAccompanyingPerson";
+
 import ChildAttendance from "./view/components/pages/ChildAttendance/ChildAttendance";
 import MyChildCardInfo from "./view/components/pages/MyChildCard/MyChildCardInfo";
 import DriverPage from "./view/components/pages/DriverPage/DriverPage";
 import AccompanyingPersonPage from "./view/components/pages/AccompanyingPersonPage/AccompanyingPersonPage";
 import TransportationManager from "./view/components/pages/TransportationManager/TransportationManager";
 import DriverAttendancePage from "./view/components/pages/DriverAttendancePage/DriverAttendancePage";
-import TransportationManagerSubList from "./view/components/pages/TransportationManagerSubList/TransportationManagerSubList";
-import AccompanyingPersonAbsentPage from "./view/components/pages/AccompanyingPersonAbsentPage/AccompanyingPersonAbsentPage";
+import AccompanyingAttendance from "./view/components/pages/AccompanyingAttendance/AccompanyingAttendance";
 import AccompanyingPersonChildCard from "./view/components/pages/AccompanyingPersonChildCard/AccompanyingPersonChildCard";
 import AccompanyingPersonTrack from "./view/components/pages/AccompanyingPersonTrack/AccompanyingPersonTrack";
-import TransportationManagerAbsentPage from "./view/components/pages/TransportationManagerAbsentPage/TransportationManagerAbsentPage";
-import DriverEditInfo from "./view/components/pages/DriverEditInfo/DriverEditInfo";
 import SchoolAdministratorPage from "./view/components/pages/SchoolAdministratorPage/SchoolAdministratorPage";
 import VehicleCompanyManager from "./view/components/pages/VehicleCompanyManager/VehicleCompanyManager";
 import {
@@ -46,7 +48,15 @@ function App() {
               <Link to="/ParentHomePage">ParentHomePage</Link>
             </li>
             <li>
-              <Link to="/MyChildCard">MyChildCard</Link>
+              <Link to="/SettingsPage">SettingsPage</Link>
+            </li>
+
+            <li>
+              <Link to="/SettingsPageUsers">SettingsPageUsers</Link>
+            </li>
+            
+            <li>
+              <Link to="/SettingsPageAccompanyingPerson">SettingsPageAccompanyingPerson</Link>
             </li>
             <li>
               <Link to="/ChildAttendance">ChildAttendance</Link>
@@ -54,25 +64,16 @@ function App() {
             <li>
               <Link to="/MyChildCardInfo">MyChildCardInfo</Link>
             </li>
-			
-			<li>
-              <Link to="/DriverEditInfo">DriverEditInfo</Link>
-            </li>
-          <li>
-              <Link to="/TransportationManagerAbsentPage">TransportationManagerAbsentPage</Link>
-            </li>
+        
           <li>
               <Link to="/AccompanyingPersonChildCard">AccompanyingPersonChildCard</Link>
             </li>
           <li>
-              <Link to="/AccompanyingPersonAbsentPage">AccompanyingPersonAbsentPage</Link>
+              <Link to="/AccompanyingAttendance">AccompanyingAttendance</Link>
             </li>
 			
 			<li>
               <Link to="/DriverAttendancePage">DriverAttendancePage</Link>
-            </li>
-            <li>
-              <Link to="/TransportationManagerSubList">TransportationManagerSubList</Link>
             </li>
              <li>
               <Link to="/DriverPage">DriverPage</Link>
@@ -105,12 +106,18 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/DriverEditInfo">
-            <DriverEditInfo />
+        
+        <Route path="/SettingsPage">
+            <SettingsPage />
           </Route>
-        <Route path="/TransportationManagerAbsentPage">
-            <TransportationManagerAbsentPage />
+          
+          <Route path="/SettingsPageUsers">
+            <SettingsPageUsers />
           </Route>
+          <Route path="/SettingsPageAccompanyingPerson">
+            <SettingsPageAccompanyingPerson />
+          </Route>
+  
         <Route path="/AccompanyingPersonTrack">
             <AccompanyingPersonTrack />
           </Route>
@@ -120,12 +127,8 @@ function App() {
         <Route path="/DriverAttendancePage">
             <DriverAttendancePage />
           </Route>
-		  <Route path="/TransportationManagerSubList">
-            <TransportationManagerSubList />
-            
-          </Route>
-          <Route path="/AccompanyingPersonAbsentPage">
-            <AccompanyingPersonAbsentPage />
+          <Route path="/AccompanyingAttendance">
+            <AccompanyingAttendance />
             
           </Route>
           
@@ -151,9 +154,7 @@ function App() {
         <Route path="/ChildAttendance">
             <ChildAttendance />
           </Route>
-        <Route path="/MyChildCard">
-            <MyChildCard />
-          </Route>
+        
         <Route path="/ParentHomePage">
             <ParentHomePage />
           </Route>
