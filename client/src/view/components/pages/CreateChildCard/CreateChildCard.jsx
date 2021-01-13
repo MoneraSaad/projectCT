@@ -190,7 +190,7 @@ function CreateChildCard() {
 
                         <Form.Label column="true" sm="2" htmlFor="childName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Name: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="childName" name="childName" placeholder="child Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="childName" name="childName" placeholder="Child Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                         <Form.Label column="true" sm="2" htmlFor="ChildLastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Last Name: </Form.Label>
