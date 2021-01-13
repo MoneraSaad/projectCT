@@ -69,11 +69,12 @@ function LogIn() {
     // }
     return (
          <div className="logInContainer">
+             <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';"></meta>
             <Container style={{border:"solid #ffa500",borderColor:"#ffa500",textAlign:"center", background: `url('${process.env.PUBLIC_URL}/l.png')`}}>
                 <Form.Text id="passwordHelpBlock" muted>
                     Sign In
                 </Form.Text>
-            {/* <img alt="" src={process.env.PUBLIC_URL + "childTransportLogo.png"} style={{width:"50%",height:"50%",border:"0px solid white",borderRadius:"30px 30px 30px 30px"}}></img><br></br> */}
+            <img alt="" src={process.env.PUBLIC_URL + "childTransportLogo.png"} style={{width:"50%",height:"50%",border:"0px solid white",borderRadius:"30px 30px 30px 30px"}}></img><br></br>
 
             <Form onSubmit={handleLogInBtn}>
             <br></br>
