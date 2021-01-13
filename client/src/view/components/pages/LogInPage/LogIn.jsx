@@ -68,7 +68,7 @@ function LogIn() {
     //     history.replace("/SignUp");
     // }
     return (
-         <div className="logInContainer">
+         <div className="logInContainer">/
             <Container style={{border:"solid #ffa500",borderColor:"#ffa500",textAlign:"center", background: `url('${process.env.PUBLIC_URL}/l.png')`}}>
                 <Form.Text id="passwordHelpBlock" muted>
                     Sign In
