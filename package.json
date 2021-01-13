@@ -1,7 +1,7 @@
 {
   "name": "projectct",
   "version": "1.0.0",
-  "description": "",
+  "description": "childTransport",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,5 +18,14 @@
     "mongoose": "^5.11.10",
     "react-bootstrap": "^1.4.3",
     "react-google-maps": "^9.4.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoneraSaad/projectCT.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MoneraSaad/projectCT/issues"
+  },
+  "homepage": "https://github.com/MoneraSaad/projectCT#readme"
 }
