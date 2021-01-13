@@ -1,57 +1,65 @@
 import React from 'react';
-import { useState} from 'react';
+import { useState } from 'react';
 import "./SignUp.css";
-import { Form, Button, Container, Row, Col,Nav,Navbar } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
-let childInfo = {
-  childName: "",
-  childLastName: "",
-  childID: "",
-  streetAdrees1: "",
-  streetAdrees2: "",
+
+let personalInformation = {
+  userName: "",
+  userLastName: "",
+  userID: "",
+  userEmail: "",
+  phoneNumber: "",
+  userRole: "",
+  password: "",
   city: "",
-  zipCode: "",
+  streetNum: "",
   gender: "",
-};
-
-let fatherInfo = {
-  firstName: "",
-  lastName: "",
-  fatherID: "",
-  phoneNum: "",
-  homeAdrees: "",
-  email: ""
-}
-
-let motherInfo = {
-  firstName: "",
-  lastName: "",
-  motherID: "",
-  phoneNum: "",
-  homeAdrees: "",
-  email: ""
-}
-
-let accompanyingPersonInfo = {
-  firstName: "",
-  lastName: "",
-  phoneNum: "",
-  email: "",
-  gender: "",
-  userID:""
-}
-
-let schoolInfo = {
-  schoolName: "",
-  SchoolAdministrator: "",
-  phoneNum: "",
-  Adress: "",
 }
 
 function SignUp() {
   const history = useHistory();
   let SchoolAdministratorID = localStorage.getItem("userID");
   let createNewRole = localStorage.getItem("createRole");
+
+  function handleRegister(e) {
+    e.preventDefault();
+    const { firstName, lastName, ID, phoneNumber, city, streetNum, gender, email, password } = e.target.elements;
+    personalInformation.userName = firstName.value;
+    personalInformation.userLastName = lastName.value;
+    personalInformation.userID = ID.value;
+    personalInformation.phoneNumber = phoneNumber.value;
+    personalInformation.userRole = createNewRole;
+    personalInformation.city = city.value;
+    personalInformation.streetNum = streetNum.value;
+    personalInformation.gender = gender.value;
+    personalInformation.userEmail = email.value;
+    personalInformation.password = password.value;
+
+    //fetch to login user 
+    fetch('/api/users/register', {
+      method: "POST",
+      body: JSON.stringify({ personalInformation }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log(data);
+          alert("Successfully Registered");
+        }
+        else {
+          alert("!!User already exists!!");
+        }
+
+
+      });
+
+
+
+  }
 
   function handleSettings() {
     history.replace("/SettingsPageUsers");
@@ -86,27 +94,6 @@ function SignUp() {
       });
   }
 
-  function handleRegister() {
-    //fetch to logout user 
-    fetch('/api/users/createNewAccount', {
-      method: "POST",
-      body: JSON.stringify({createNewRole}),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          localStorage.clear();
-          history.replace('/LogIn');
-        }
-        else {
-
-          alert("can't log out");
-        }
-      });
-  }
 
   return (
     <div>
@@ -152,13 +139,14 @@ function SignUp() {
           <Form.Group as={Row}>
             <Form.Label column sm="2" htmlFor="userRole" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Role: </Form.Label>
             <Col sm="4">
-              <Form.Control className="form-control" id="userRole" name="userRole" placeholder="User Role" required style={{ borderBottom: " 2px solid orange" }}></Form.Control><br></br>
+              <Form.Control className="form-control" id="userRole" name="userRole" value={createNewRole} readOnly style={{ borderBottom: " 2px solid orange" }}></Form.Control><br></br>
             </Col>
             <Form.Label column sm="2" htmlFor="city" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>City: </Form.Label>
             <Col sm="4">
               <Form.Control className="form-control" id="city" name="city" placeholder="City" required style={{ borderBottom: " 2px solid orange" }}></Form.Control><br></br>
             </Col>
           </Form.Group>
+
           {/*         <Form.Text id="passwordHelpBlock" muted>
                    The Role should be one of these: 1.parent, 2.Accompanying Person,3.Driver,4.School Administrator,5.Transportation Manager,6.Vehicle Company Manager.
             </Form.Text> */}

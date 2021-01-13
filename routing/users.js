@@ -15,13 +15,13 @@ router.post('/login', (req, res) => {
     UserModel.find({ "userInfo.userID": userID, "userInfo.password": password }).then(docs => {
 
         if (docs.length > 0) {
-            docs[0].active=true;
+            docs[0].active = true;
             docs[0].save();
             res.send({ success: true, error: null, info: docs });
             res.end();
 
         } else {
-            res.send({ success: false, error:true, info: null });
+            res.send({ success: false, error: true, info: null });
         }
 
 
@@ -32,18 +32,18 @@ router.post('/login', (req, res) => {
 //logout
 router.post('/logout', (req, res) => {
 
-    const { userID} = req.body;
+    const { userID } = req.body;
 
-    UserModel.find({ "userInfo.userID": userID}).then(docs => {
+    UserModel.find({ "userInfo.userID": userID }).then(docs => {
 
         if (docs.length > 0) {
-            docs[0].active=false;
+            docs[0].active = false;
             docs[0].save();
-            res.send({ success: true, error: null});
+            res.send({ success: true, error: null });
             res.end();
 
         } else {
-            res.send({ success: false, error:true });
+            res.send({ success: false, error: true });
         }
 
 
@@ -154,9 +154,9 @@ router.post('/editPersonalInfoForAccompanyingPerson', (req, res) => {
             ChildrenCardModel.find().then(docs2 => {
                 if (docs2.length > 0) {
                     docs2.map((item, index) => {
-                    item.AccompanyingPersonInfo.phoneNum = personalInformation.phoneNumber;
-                    item.AccompanyingPersonInfo.email = personalInformation.userEmail;
-                    item.save();
+                        item.AccompanyingPersonInfo.phoneNum = personalInformation.phoneNumber;
+                        item.AccompanyingPersonInfo.email = personalInformation.userEmail;
+                        item.save();
                     })
                     res.send({ success: true, error: null, info: docs2 })
                     res.end();
@@ -204,7 +204,7 @@ router.post('/AccompanyingAttendance', (req, res) => {
         console.log(checkCheckBox1);
         if (checkCheckBox1.length > 0) {
 
-            res.send({ success: true, error: null, info:checkCheckBox1 });
+            res.send({ success: true, error: null, info: checkCheckBox1 });
             res.end();
 
         } else {
@@ -216,7 +216,7 @@ router.post('/AccompanyingAttendance', (req, res) => {
 
             var data = new UserModel({ userInfo: temp });
             data.save();
-            res.send({ success: false, error: true,info:null });
+            res.send({ success: false, error: true, info: null });
 
 
 
@@ -267,6 +267,38 @@ router.post('/vehicleCompanyManagerPhone', (req, res) => {
 }
 )
 
+//register
+router.post('/register', (req, res) => {
+
+    const { personalInformation } = req.body;
+
+    UserModel.find({ "userInfo.userID": personalInformation.userID }).then(docs => {
+
+        if (docs.length > 0) {
+            res.send({ success: false, error: true, info: null });
+            res.end();
+
+        } else {
+            let newUser = {
+                userName: personalInformation.userName,
+                userLastName: personalInformation.userLastName,
+                userID: personalInformation.userID,
+                userEmail: personalInformation.userEmail,
+                phoneNumber: personalInformation.phoneNumber,
+                userRole: personalInformation.userRole,
+                password: personalInformation.password,
+                city: personalInformation.city,
+                streetNum: personalInformation.streetNum,
+                gender: personalInformation.gender,
+            }
+            let active1 = false;
+            var data = new UserModel({ userInfo: newUser, active: active1 });
+            data.save();
+            res.send({ success: true, error: false, info: data });
+        }
 
 
+    })
+}
+)
 module.exports = router;

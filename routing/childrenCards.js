@@ -322,5 +322,67 @@ router.post('/getAccompanyingPersonPhone', (req, res) => {
     
 })
 
+//createChildCard
+router.post('/createChildCard', (req, res) => {
+    
+    const {childInfo,fatherInfo,motherInfo,accompanyingPersonInfo,schoolInfo} = req.body;
+  
+    ChildrenCardModel.find({ "ChildInfo.childID": childInfo.childID }).then(docs => {
+        
+        if (docs.length > 0) {
+            res.send({ success: false, error: true, info: null });
+            res.end();
+        } else {
+            let childInfo1 = {
+                childName: childInfo.childName,
+                childLastName: childInfo.childLastName,
+                childID: childInfo.childID,
+                streetAdrees1: childInfo.streetAdrees1,
+                streetAdrees2: childInfo.streetAdrees2,
+                city: childInfo.city,
+                zipCode:childInfo.zipCode,
+                gender:childInfo.gender
+            };
+
+            let fatherInfo1 = {
+                firstName:fatherInfo.firstName,
+                lastName: fatherInfo.lastName,
+                fatherID: fatherInfo.fatherID,
+                phoneNum:fatherInfo.phoneNum,
+                homeAdrees: fatherInfo.homeAdrees,
+                email: fatherInfo.email
+            };
+
+            let motherInfo1 = {
+                firstName: motherInfo.firstName,
+                lastName: motherInfo.lastName,
+                motherID: motherInfo.motherID,
+                phoneNum: motherInfo.phoneNum,
+                homeAdrees: motherInfo.homeAdrees,
+                email:motherInfo.email
+            };
+            let accompanyingPersonInfo1 = {
+                firstName: accompanyingPersonInfo.firstName,
+                lastName: accompanyingPersonInfo.lastName,
+                phoneNum: accompanyingPersonInfo.phoneNum,
+                email: accompanyingPersonInfo.email,
+                gender:accompanyingPersonInfo.gender,
+                userID:accompanyingPersonInfo.userID,
+            };
+
+            let schoolInfo1 = {
+                schoolName: schoolInfo.schoolName,
+                SchoolAdministrator: schoolInfo.SchoolAdministrator,
+                phoneNum: schoolInfo.phoneNum,
+                Adrees: schoolInfo.Adress
+            };
+
+            var data = new ChildrenCardModel({ ChildInfo: childInfo1, FatherInfo: fatherInfo1,MotherInfo:motherInfo1,AccompanyingPersonInf:accompanyingPersonInfo1,SchoolInfo:schoolInfo1 });
+            data.save();
+            res.send({ success: true, error: null, info: data });
+        }
+    })//find according to fatherID
+    
+})
 
 module.exports = router;

@@ -3,7 +3,7 @@ import Login from "./view/components/pages/LogInPage/LogIn";
 import ForgotPassword from "./view/components/pages/ForgotPassword/ForgotPassword";
 import SignUp from "./view/components/pages/SignUp/SignUp";
 import ParentHomePage from "./view/components/pages/ParentHomePage/ParentHomePage" ; 
-// import MyChildCard from "./view/components/pages/MyChildCard/MyChildCard";
+import CreateChildCard from "./view/components/pages/CreateChildCard/CreateChildCard";
 
 import SettingsPage from "./view/components/pages/SettingsPage/SettingsPage";
 import SettingsPageUsers from "./view/components/pages/SettingsPageUsers/SettingsPageUsers";
@@ -44,6 +44,11 @@ function App() {
             <li>
               <Link to="/SignUp">SignUp</Link>
             </li>
+
+            <li>
+              <Link to="/CreateChildCard">CreateChildCard</Link>
+            </li>
+            
             <li>
               <Link to="/ParentHomePage">ParentHomePage</Link>
             </li>
@@ -129,9 +134,10 @@ function App() {
           </Route>
           <Route path="/AccompanyingAttendance">
             <AccompanyingAttendance />
-            
           </Route>
-          
+          <Route path="/CreateChildCard">
+            <CreateChildCard />
+          </Route>
           <Route path="/AccompanyingPersonPage">
             <AccompanyingPersonPage />
           </Route>

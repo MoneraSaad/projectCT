@@ -46,7 +46,7 @@ function SchoolAdministratorPage() {
 
 
     function handleChildCard() {
-        history.replace("/NewChildCard");
+        history.replace("/CreateChildCard");
     }
 
     

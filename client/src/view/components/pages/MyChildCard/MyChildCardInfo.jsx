@@ -240,7 +240,7 @@ function MyChildCardInfo() {
                 </Form.Group>
 
                 <Form.Group as={Row} style={{ color: "white" }}>
-                    <Col sm="6"><label>Phone Number: </label> {schoolData.phoneNum} </Col>
+                    <Col sm="6"><label>School Phone Number: </label> {schoolData.phoneNum} </Col>
                     <Col sm="6"><label>Address: </label> {schoolData.Adress} </Col>
                 </Form.Group>
                 <br></br>
