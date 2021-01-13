@@ -252,13 +252,13 @@ function CreateChildCard() {
                         <Col sm="4">
                             <Form.Control id="lastName" name="lastName" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
-                     </Form.Group>
-                     <Form.Group as={Row} style={{ color: "white" }}>
+                    </Form.Group>
+                    <Form.Group as={Row} style={{ color: "white" }}>
                         <Form.Label column="true" sm="2" htmlFor="fatherID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="fatherID" name="fatherID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
-                        
+
                         <Form.Label column="true" sm="2" htmlFor="phoneNum" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="phoneNum" name="phoneNum" placeholder="Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
@@ -331,9 +331,9 @@ function CreateChildCard() {
                         <Col sm="4">
                             <Form.Control id="lastName2" name="lastName2" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
-                        </Form.Group>
+                    </Form.Group>
 
-                        <Form.Group as={Row} style={{ color: "white" }}> 
+                    <Form.Group as={Row} style={{ color: "white" }}>
                         <Form.Label column="true" sm="2" htmlFor="userID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="userID" name="userID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
