@@ -69,7 +69,6 @@ function LogIn() {
     // }
     return (
          <div className="logInContainer">
-             <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';"></meta>
             <Container style={{border:"solid #ffa500",borderColor:"#ffa500",textAlign:"center", background: `url('${process.env.PUBLIC_URL}/l.png')`}}>
                 <Form.Text id="passwordHelpBlock" muted>
                     Sign In
