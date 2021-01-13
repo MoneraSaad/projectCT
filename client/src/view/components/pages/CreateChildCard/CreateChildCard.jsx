@@ -188,12 +188,12 @@ function CreateChildCard() {
 
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="childName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Name: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="childName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Name: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="childName" name="childName" placeholder="child Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="ChildLastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Last Name: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="ChildLastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Last Name: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="ChildLastName" name="ChildLastName" placeholder="Child Last Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
@@ -201,12 +201,12 @@ function CreateChildCard() {
 
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="ChildID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child ID: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="ChildID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child ID: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="ChildID" name="ChildID" placeholder="Child ID" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="Gender1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Gender: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="Gender1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Gender: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="Gender1" name="Gender1" placeholder="Gender" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
@@ -215,12 +215,12 @@ function CreateChildCard() {
                     <Form.Group as={Row} style={{ color: "white" }}>
 
 
-                        <Form.Label column sm="2" htmlFor="streetAdrees1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Home Address 1: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="streetAdrees1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Home Address 1: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="streetAdrees1" name="streetAdrees1" placeholder="Child Home Address 1" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="streetAdrees2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Home Address 2: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="streetAdrees2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Home Address 2: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="streetAdrees2" name="streetAdrees2" placeholder="Child Home Address 2" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
@@ -228,12 +228,12 @@ function CreateChildCard() {
 
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="City" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>City: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="City" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>City: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="City" name="City" placeholder="City" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="zipCode" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ZIP Code: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="zipCode" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ZIP Code: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="zipCode" name="zipCode" placeholder="ZIP Code" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
@@ -243,74 +243,77 @@ function CreateChildCard() {
                     <h5 style={{ fontWeight: "bold", color: "white", textDecoration: "underline", fontFamily: "Times New Roman" }}>Father's Information</h5>
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="firstName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>First Name: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="firstName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>First Name: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="firstName" name="firstName" placeholder="First Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="lastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="lastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="lastName" name="lastName" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
-
-                        <Form.Label column sm="2" htmlFor="fatherID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
-                        <Col sm="2">
+                     </Form.Group>
+                     <Form.Group as={Row} style={{ color: "white" }}>
+                        <Form.Label column="true" sm="2" htmlFor="fatherID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="fatherID" name="fatherID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
+                        
+                        <Form.Label column="true" sm="2" htmlFor="phoneNum" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
+                        <Col sm="4">
+                            <Form.Control id="phoneNum" name="phoneNum" placeholder="Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                        </Col>
+
                     </Form.Group>
 
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="phoneNum" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
-                        <Col sm="2">
-                            <Form.Control id="phoneNum" name="phoneNum" placeholder="Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
-                        </Col>
-
-                        <Form.Label column sm="2" htmlFor="homeAdrees" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>home Address: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="homeAdrees" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>home Address: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="homeAdrees" name="homeAdrees" placeholder="home Address" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="email" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="email" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="email" name="email" placeholder="Email" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
+
                     <div style={{ border: "1px solid orange" }}></div>
                     <br></br>
                     <h5 style={{ fontWeight: "bold", color: "white", textDecoration: "underline", fontFamily: "Times New Roman" }}>Mother's Information</h5>
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="firstName1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>First Name: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="firstName1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>First Name: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="firstName1" name="firstName1" placeholder="First Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="lastName1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="lastName1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="lastName1" name="lastName1" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="motherID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="motherID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="motherID" name="motherID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                        </Col>
+                        <Form.Label column="true" sm="2" htmlFor="phoneNum1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
+                        <Col sm="4">
+                            <Form.Control id="phoneNum1" name="phoneNum1" placeholder="Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
 
                     <Form.Group as={Row} style={{ color: "white" }}>
-
-                        <Form.Label column sm="2" htmlFor="phoneNum1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
-                        <Col sm="2">
-                            <Form.Control id="phoneNum1" name="phoneNum1" placeholder="Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
-                        </Col>
-
-                        <Form.Label column sm="2" htmlFor="homeAdrees1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>home Address: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="homeAdrees1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>home Address: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="homeAdrees1" name="homeAdrees1" placeholder="home Address" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="email1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="email1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="email1" name="email1" placeholder="Email" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
@@ -319,36 +322,37 @@ function CreateChildCard() {
                     <h5 style={{ fontWeight: "bold", color: "white", textDecoration: "underline", fontFamily: "Times New Roman" }}>Accompanying Person Information</h5>
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="firstName2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>First Name: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="firstName2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>First Name: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="firstName2" name="firstName2" placeholder="First Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="lastName2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="lastName2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="lastName2" name="lastName2" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
+                        </Form.Group>
 
-                        <Form.Label column sm="2" htmlFor="userID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
-                        <Col sm="2">
+                        <Form.Group as={Row} style={{ color: "white" }}> 
+                        <Form.Label column="true" sm="2" htmlFor="userID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="userID" name="userID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                        </Col>
+
+                        <Form.Label column="true" sm="2" htmlFor="phoneNum2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
+                        <Col sm="4">
+                            <Form.Control id="phoneNum2" name="phoneNum2" placeholder="Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
 
                     <Form.Group as={Row} style={{ color: "white" }}>
-
-                        <Form.Label column sm="2" htmlFor="phoneNum2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
-                        <Col sm="2">
-                            <Form.Control id="phoneNum2" name="phoneNum2" placeholder="Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
-                        </Col>
-
-                        <Form.Label column sm="2" htmlFor="email2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="email2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="email2" name="email2" placeholder="Email" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="gender2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Gender: </Form.Label>
-                        <Col sm="2">
+                        <Form.Label column="true" sm="2" htmlFor="gender2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Gender: </Form.Label>
+                        <Col sm="4">
                             <Form.Control id="gender2" name="gender2" placeholder="Gender" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
@@ -358,12 +362,12 @@ function CreateChildCard() {
                     <h5 style={{ fontWeight: "bold", color: "white", textDecoration: "underline", fontFamily: "Times New Roman" }}>School Information</h5>
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="schoolName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>School Name: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="schoolName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>School Name: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="schoolName" name="schoolName" placeholder="School Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="SchoolAdministrator" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>School Administrator: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="SchoolAdministrator" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>School Administrator: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="SchoolAdministrator" name="SchoolAdministrator" placeholder="School Administrator" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
@@ -371,12 +375,12 @@ function CreateChildCard() {
 
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column sm="2" htmlFor="phoneNum3" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>School Phone Number: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="phoneNum3" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>School Phone Number: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="phoneNum3" name="phoneNum3" placeholder="School Phone Number" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column sm="2" htmlFor="Adress" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Address: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="Adress" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Address: </Form.Label>
                         <Col sm="4">
                             <Form.Control id="Adress" name="Adress" placeholder="Address" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
