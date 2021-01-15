@@ -5,6 +5,7 @@ import SignUp from "./view/components/pages/SignUp/SignUp";
 import ParentHomePage from "./view/components/pages/ParentHomePage/ParentHomePage" ; 
 import CreateChildCard from "./view/components/pages/CreateChildCard/CreateChildCard";
 import ChildCard from "./view/components/pages/ChildCard/ChildCard";
+import AllChildrenCards from "./view/components/pages/AllChildrenCards/AllChildrenCards";
 
 import SettingsPage from "./view/components/pages/SettingsPage/SettingsPage";
 import SettingsPageUsers from "./view/components/pages/SettingsPageUsers/SettingsPageUsers";
@@ -56,9 +57,12 @@ function App() {
               <Link to="/ParentHomePage">ParentHomePage</Link>
             </li>
             <li>
+              <Link to="/AllChildrenCards">AllChildrenCards</Link>
+            </li>
+            <li>
               <Link to="/SettingsPage">SettingsPage</Link>
             </li>
-
+            
             <li>
               <Link to="/SettingsPageUsers">SettingsPageUsers</Link>
             </li>
@@ -128,6 +132,9 @@ function App() {
           
           <Route path="/ChildCard">
             <ChildCard />
+          </Route>
+          <Route path="/AllChildrenCards">
+            <AllChildrenCards />
           </Route>
         <Route path="/AccompanyingPersonTrack">
             <AccompanyingPersonTrack />

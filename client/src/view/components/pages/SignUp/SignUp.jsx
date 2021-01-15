@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import "./SignUp.css";
 import { Form, Button, Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";

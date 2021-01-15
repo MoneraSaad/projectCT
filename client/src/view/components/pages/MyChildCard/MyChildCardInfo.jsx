@@ -71,7 +71,7 @@ function MyChildCardInfo() {
         })
             .then(res => res.json())
             .then(data => {
-                if (data != null) {
+                if (data.success) {
                     setChildData(data.info[0]);
                     setFatherData(data.info[1]);
                     setMotherData(data.info[2]);

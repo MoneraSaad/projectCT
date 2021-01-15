@@ -1,13 +1,10 @@
 import React from 'react';
-import { useState } from 'react';
 import "./TransportationManager.css";
 import { Button, Container,Navbar,Nav } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 
 function TransportationManager() {
   const history = useHistory();
-
-
 
   function handleWhatsapp() {
     let vehicleCompanyManager;

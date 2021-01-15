@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState} from 'react';
 import "./ParentHomePage.css";
 import { useHistory } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,8 +12,6 @@ let accompanyingPersonInfo = {
 }
 function ParentHomePage() {
     let myParentID = localStorage.getItem("userID");
-
-    // const [accompanyingPersonData, setAccompanyingPersonData] = useState([]);
     function handleWhatsapp() {
 
         fetch('/api/childrenCards/getAccompanyingPersonPhone', {

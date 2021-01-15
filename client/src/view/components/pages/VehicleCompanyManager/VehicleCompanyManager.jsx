@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState} from 'react';
 import "./VehicleCompanyManager.css";
 import { useHistory } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -16,6 +16,7 @@ let personalInformation = {
     streetNum: "",
     gender: "",
 }
+
 function SettingsPageUsers() {
     let history = useHistory();
     let userID = localStorage.getItem("userID");
@@ -23,7 +24,7 @@ function SettingsPageUsers() {
     useEffect(() => {
         fetch('/api/users/getMyInfo', {
             method: 'POST',
-            body: JSON.stringify({ userID: localStorage.getItem("userID") }),
+            body: JSON.stringify({ userID:localStorage.getItem("userID")}),
             headers: {
                 'Content-Type': 'application/json'
             }

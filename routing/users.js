@@ -248,6 +248,7 @@ router.post('/transportationManagetPhone', (req, res) => {
 }
 )
 
+//vehicleCompanyManagerPhone
 router.post('/vehicleCompanyManagerPhone', (req, res) => {
     const { transportationManagerID } = req.body;
 
@@ -267,6 +268,28 @@ router.post('/vehicleCompanyManagerPhone', (req, res) => {
     })
 }
 )
+
+//vehicleCompanyManagerPhone
+router.post('/schoolAdministratorPhone', (req, res) => {
+    // const { transportationManagerID } = req.body;
+
+    let userRole1 = "School Administrator";
+
+    UserModel.find({ "userInfo.userRole": userRole1 }).then(docs => {
+
+        if (docs.length > 0) {
+            res.send({ success: true, error: null, info: docs });
+
+
+        } else {
+            res.send({ success: false, error: true, info: null });
+        }
+
+
+    })
+}
+)
+
 
 //register
 router.post('/register', (req, res) => {

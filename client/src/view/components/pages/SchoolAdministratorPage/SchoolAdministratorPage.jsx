@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState} from 'react';
 import "./SchoolAdministratorPage.css";
 import { useHistory } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,9 +6,11 @@ import { Button, Container,Navbar, Nav,Dropdown } from 'react-bootstrap';
 
 function SchoolAdministratorPage() {
     let history = useHistory();
-    // const [value,setValue]=useState('');
     let SchoolAdministratorID = localStorage.getItem("userID");
 
+    function handleChildrenCardsBtn() {
+        history.replace("/AllChildrenCards");
+      }
 
     function handleSettings() {
         history.replace("/SettingsPageUsers");
@@ -68,7 +69,7 @@ function SchoolAdministratorPage() {
                 </Navbar>
                 <h1 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman" }}>Welcome School Administrator</h1><br></br>
 
-                <Button variant="dark" size="lg" type="button">Children List</Button>
+                <Button variant="dark" size="lg" type="button" onClick={handleChildrenCardsBtn}>Children List</Button>
                 <br></br>
                 <br></br>
                 <Button variant="dark" size="lg" type="button" >Accompanying Persons List</Button>

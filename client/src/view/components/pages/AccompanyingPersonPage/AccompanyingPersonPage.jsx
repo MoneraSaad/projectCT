@@ -1,7 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
 import "./AccompanyingPersonPage.css";
-import { Button, Container,Navbar,Nav} from 'react-bootstrap';
+import { Button, Container, Navbar, Nav } from 'react-bootstrap';
 
 import { useHistory } from "react-router-dom";
 
@@ -27,37 +26,61 @@ function AccompanyingPersonPage() {
     }
 
   }
-  function handleSettings(){
+
+  function handleWhatsapp() {
+    let schoolAdministratorPhone;
+    fetch('/api/users/schoolAdministratorPhone', {
+      method: "POST",
+      body: JSON.stringify({}),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          schoolAdministratorPhone = data.info[0].userInfo.phoneNumber;
+          window.open("https://api.whatsapp.com/send?phone=+972" + schoolAdministratorPhone + "&text=&source=&data=");
+        } else {
+          alert("couldn't get school Administrator phone number");
+        }
+
+      });
+
+
+  }
+
+  function handleSettings() {
     history.replace("/SettingsPageAccompanyingPerson");
-}
-function handleHomePage(){
-  history.replace("/AccompanyingPersonPage");
-}
+  }
+  function handleHomePage() {
+    history.replace("/AccompanyingPersonPage");
+  }
 
-function handleLogOut() {
-     
-  const userID = AccompanyingPerson;
+  function handleLogOut() {
 
-  //fetch to logout user 
-  fetch('/api/users/logout', {
+    const userID = AccompanyingPerson;
+
+    //fetch to logout user 
+    fetch('/api/users/logout', {
       method: "POST",
       body: JSON.stringify({ userID }),
       headers: {
-          "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
-  })
+    })
       .then((res) => res.json())
       .then((data) => {
-          if (data.success) {
-              localStorage.clear();
-              history.replace('/LogIn');
-          }
-          else {
+        if (data.success) {
+          localStorage.clear();
+          history.replace('/LogIn');
+        }
+        else {
 
-              alert("can't log out");
-          }
+          alert("can't log out");
+        }
       });
-}
+  }
 
 
   return (
@@ -73,7 +96,7 @@ function handleLogOut() {
         </Navbar>
         <h3 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman" }}>Welcome Accompanying Person</h3><br></br>
 
-        <Button variant="dark" size="lg" type="button" onClick={handleChildrenCardsBtn} >Children Cards</Button>
+        <Button variant="dark" size="lg" type="button" onClick={handleChildrenCardsBtn} >Children List</Button>
         <br></br>
         <br></br>
         <Button variant="dark" size="lg" type="button" onClick={handleAccAbsentBtn} >Submit Attendance Status</Button>
@@ -82,7 +105,10 @@ function handleLogOut() {
         <Button variant="dark" size="lg" type="button" onClick={handleAccompanyingPTrack} >Track Vehicle </Button>
         <br></br>
         <br></br>
-        <a href="https://api.whatsapp.com/send?phone=+9720548145257&text=&source=&data=" className="whatsApp" target="_blank"><i className="fa fa-whatsapp my-whatsApp">Contact</i></a>
+        {/* <Button variant="dark" size="lg" type="button" onClick={handleWhatsapp}>Contact Driver</Button>
+        <br></br>
+        <br></br> */}
+        <Button variant="dark" size="lg" type="button" onClick={handleWhatsapp}>Contact School Administrator</Button>
         <br></br>
         <br></br>
       </Container>

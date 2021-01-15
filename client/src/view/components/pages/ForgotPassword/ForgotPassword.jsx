@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import "./ForgotPassword.css";
 import { useHistory } from "react-router-dom";
 import { Form,Button,Container,Navbar,Nav} from 'react-bootstrap';

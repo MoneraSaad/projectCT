@@ -304,8 +304,7 @@ router.post('/getChildInfo', (req, res) => {
                 zipCode: docs[0].ChildInfo.zipCode,
                 gender: docs[0].ChildInfo.gender
             };
-            console.log(docs[0].ChildInfo);
-            
+         
             let fatherInfo = {
                 firstName: docs[0].FatherInfo.firstName,
                 lastName: docs[0].FatherInfo.lastName,
@@ -347,5 +346,37 @@ router.post('/getChildInfo', (req, res) => {
     })
 
 })
+
+//getChildrensCards for the school Administrator
+router.post('/getChildrensCards', (req, res) => {
+
+    let childrenInformation = [];
+    ChildrenCardModel.find({}).then(docs => {
+
+        if (docs.length > 0) {
+            docs.map((item, index) => {
+                childrenInformation.push({
+                    childName: item.ChildInfo.childName,
+                    childLastName: item.ChildInfo.childLastName,
+                    childID: item.ChildInfo.childID,
+                    gender: item.ChildInfo.gender,
+                    phoneNum: item.FatherInfo.phoneNum,
+                    phoneNum2: item.MotherInfo.phoneNum,
+                    accompanyingPersonName:item.AccompanyingPersonInfo.firstName,
+                    accompanyingPersonLastName:item.AccompanyingPersonInfo.lastName,
+                    accompanyingPersonID:item.AccompanyingPersonInfo.userID,
+                    accompanyingPersonPhoneNum:item.AccompanyingPersonInfo.phoneNum,
+                });
+            })
+            res.send({ success: true, error: null, info: childrenInformation });
+            res.end();
+        } else {
+            res.send({ success: false, error: true, info: null });
+            res.end();
+        }
+
+    })
+}
+)
 
 module.exports = router;

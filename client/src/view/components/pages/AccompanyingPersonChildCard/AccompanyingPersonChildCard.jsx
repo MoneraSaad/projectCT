@@ -6,14 +6,14 @@ import { useHistory } from "react-router-dom";
 
 function AccompanyingPersonChildCard() {
     const history = useHistory();
-
     let AccompanyingPerson = localStorage.getItem("userID");
+    localStorage.removeItem("childCardNum");
     const [childrenData, setChildrenData] = useState([]);
     useEffect(() => {
-
+       
         fetch('/api/childrenCards/getAllChildrensCards', {
             method: 'POST',
-            body: JSON.stringify({ AccompanyingPerson }),
+            body: JSON.stringify({ AccompanyingPerson:localStorage.getItem("userID") }),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -74,7 +74,8 @@ function AccompanyingPersonChildCard() {
     }
 
     function handleChildCard(e){
-        const theChildID=e.target.id;
+        let theChildID=e.target.id;
+        localStorage.removeItem("childCardNum");
         localStorage.setItem("childCardNum",theChildID);
         history.replace("/ChildCard");
     }
@@ -110,7 +111,7 @@ function AccompanyingPersonChildCard() {
                         <Nav.Link href="#LogOut" onClick={handleLogOut}>Log Out</Nav.Link>
                     </Nav>
                 </Navbar>
-                <h3 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman" }}>Children Cards</h3><br></br>
+                <h3 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman",textAlign:"center" }}>Children Cards</h3><br></br>
                 <Table striped bordered hover responsive variant="dark" style={{ color: "white" }}>
                     <thead>
                         <tr>

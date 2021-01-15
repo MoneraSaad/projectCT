@@ -5,12 +5,10 @@ import { useHistory } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container,Row, Col, Navbar,Nav, Form } from 'react-bootstrap';
 
-
 function ChildCard() {
+    let role=localStorage.getItem("userRole");
 
     let history = useHistory();
-    let childNum = localStorage.getItem("childCardNum");
-
     const [childData, setChildData] = useState([]);
     const [fatherData, setFatherData] = useState([]);
     const [motherData, setMotherData] = useState([]);
@@ -20,14 +18,14 @@ function ChildCard() {
 
         fetch('/api/childrenCards/getChildInfo', {
             method: 'POST',
-            body: JSON.stringify({childNum}),
+            body: JSON.stringify({childNum:localStorage.getItem("childCardNum")}),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
             .then(res => res.json())
             .then(data => {
-                if (data != null) {
+                if (data.success) {
                     setChildData(data.info[0]);
                     setFatherData(data.info[1]);
                     setMotherData(data.info[2]);
@@ -35,6 +33,7 @@ function ChildCard() {
                     setSchoolData(data.info[4]);
 
                 } else {
+                    alert("can't get child card data");
                     setChildData([]);
                 }
 
@@ -45,7 +44,13 @@ function ChildCard() {
 
 
     function handleHome() {
-        history.replace("/AccompanyingPersonChildCard");
+        if(role==="Accompanying Person"){
+            history.replace("/AccompanyingPersonChildCard");
+        }
+        if(role==="School Administrator"){
+            history.replace("/AllChildrenCards");
+        }
+    
     }
    
    
