@@ -304,8 +304,8 @@ router.post('/getChildInfo', (req, res) => {
                 zipCode: docs[0].ChildInfo.zipCode,
                 gender: docs[0].ChildInfo.gender
             };
-            console.log(docs[0].ChildInfo.disabilityType);
-            console.log(childInfo.disabilityType);
+            console.log(docs[0].ChildInfo);
+            
             let fatherInfo = {
                 firstName: docs[0].FatherInfo.firstName,
                 lastName: docs[0].FatherInfo.lastName,
