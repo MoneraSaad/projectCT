@@ -9,6 +9,7 @@ let childInfo = {
     childName: "",
     childLastName: "",
     childID: "",
+    disabilityType:"",
     streetAdrees1: "",
     streetAdrees2: "",
     city: "",
@@ -56,7 +57,7 @@ function CreateChildCard() {
 
     function handleCreate(e) {
         e.preventDefault();
-        const { childName, childLastName, childID, streetAdrees1, streetAdrees2, city, zipCode, Gender1
+        const { childName, childLastName, childID, disabilityType, streetAdrees1, streetAdrees2, city, zipCode, Gender1
             , firstName, lastName, fatherID, phoneNum, homeAdrees, email,
             firstName1, lastName1, motherID, phoneNum1, homeAdrees1, email1
             , firstName2, lastName2, phoneNum2, email2, gender2, userID,
@@ -66,13 +67,14 @@ function CreateChildCard() {
         childInfo.childName = childName.value;
         childInfo.childLastName = childLastName.value;
         childInfo.childID = childID.value;
+        childInfo.disabilityType=disabilityType.value;
         childInfo.streetAdrees1 = streetAdrees1.value;
         childInfo.streetAdrees2 = streetAdrees2.value;
         childInfo.city = city.value;
         childInfo.zipCode = zipCode.value;
         childInfo.gender = Gender1.value;
 
-        console.log(childInfo);
+     
 
         //fatherInfo
         fatherInfo.firstName = firstName.value;
@@ -82,7 +84,6 @@ function CreateChildCard() {
         fatherInfo.homeAdrees = homeAdrees.value;
         fatherInfo.email = email.value;
 
-        console.log(fatherInfo);
 
         //motherInfo
         motherInfo.firstName = firstName1.value;
@@ -92,7 +93,6 @@ function CreateChildCard() {
         motherInfo.homeAdrees = homeAdrees1.value;
         motherInfo.email = email1.value;
 
-        console.log(motherInfo);
 
         //accompanyingPersonInfo
         accompanyingPersonInfo.firstName = firstName2.value;
@@ -102,15 +102,13 @@ function CreateChildCard() {
         accompanyingPersonInfo.gender = gender2.value;
         accompanyingPersonInfo.userID = userID.value;
 
-        console.log(accompanyingPersonInfo);
+   
 
         //schoolInfo
         schoolInfo.schoolName = schoolName.value;
         schoolInfo.SchoolAdministrator = SchoolAdministrator.value;
-        schoolInfo.phoneNum3 = phoneNum3.value;
+        schoolInfo.phoneNum = phoneNum3.value;
         schoolInfo.Adress = Adress.value;
-
-        console.log(schoolInfo);
 
         //fetch to login user 
         fetch('/api/childrenCards/createChildCard', {
@@ -193,17 +191,17 @@ function CreateChildCard() {
                             <Form.Control id="childName" name="childName" placeholder="Child Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
-                        <Form.Label column="true" sm="2" htmlFor="ChildLastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Last Name: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="childLastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child Last Name: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="ChildLastName" name="ChildLastName" placeholder="Child Last Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="childLastName" name="childLastName" placeholder="Child Last Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
 
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column="true" sm="2" htmlFor="ChildID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child ID: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="childID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Child ID: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="ChildID" name="ChildID" placeholder="Child ID" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="childID" name="childID" placeholder="Child ID" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                         <Form.Label column="true" sm="2" htmlFor="Gender1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Gender: </Form.Label>
@@ -228,14 +226,21 @@ function CreateChildCard() {
 
                     <Form.Group as={Row} style={{ color: "white" }}>
 
-                        <Form.Label column="true" sm="2" htmlFor="City" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>City: </Form.Label>
+                        <Form.Label column="true" sm="2" htmlFor="city" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>City: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="City" name="City" placeholder="City" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="city" name="city" placeholder="City" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                         <Form.Label column="true" sm="2" htmlFor="zipCode" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ZIP Code: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="zipCode" name="zipCode" placeholder="ZIP Code" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="zipCode" name="zipCode" placeholder="ZIP Code" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} style={{ color: "white" }}>
+
+                        <Form.Label column="true" sm="2" htmlFor="disabilityType" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Disability: </Form.Label>
+                        <Col sm="4">
+                            <Form.Control id="disabilityType" name="disabilityType" placeholder="Disability" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
                     <div style={{ border: "1px solid orange" }}></div>
@@ -250,13 +255,13 @@ function CreateChildCard() {
 
                         <Form.Label column="true" sm="2" htmlFor="lastName" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="lastName" name="lastName" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="lastName" name="lastName" placeholder="Last Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} style={{ color: "white" }}>
                         <Form.Label column="true" sm="2" htmlFor="fatherID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="fatherID" name="fatherID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="fatherID" name="fatherID" placeholder="ID" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                         <Form.Label column="true" sm="2" htmlFor="phoneNum" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
@@ -270,7 +275,7 @@ function CreateChildCard() {
 
                         <Form.Label column="true" sm="2" htmlFor="homeAdrees" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>home Address: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="homeAdrees" name="homeAdrees" placeholder="home Address" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="homeAdrees" name="homeAdrees" placeholder="home Address" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                         <Form.Label column="true" sm="2" htmlFor="email" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
@@ -291,14 +296,14 @@ function CreateChildCard() {
 
                         <Form.Label column="true" sm="2" htmlFor="lastName1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="lastName1" name="lastName1" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="lastName1" name="lastName1" placeholder="Last Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} style={{ color: "white" }}>
 
                         <Form.Label column="true" sm="2" htmlFor="motherID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="motherID" name="motherID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="motherID" name="motherID" placeholder="ID" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                         <Form.Label column="true" sm="2" htmlFor="phoneNum1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
                         <Col sm="4">
@@ -309,12 +314,12 @@ function CreateChildCard() {
                     <Form.Group as={Row} style={{ color: "white" }}>
                         <Form.Label column="true" sm="2" htmlFor="homeAdrees1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>home Address: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="homeAdrees1" name="homeAdrees1" placeholder="home Address" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="homeAdrees1" name="homeAdrees1" placeholder="home Address" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                         <Form.Label column="true" sm="2" htmlFor="email1" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Email: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="email1" name="email1" placeholder="Email" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="email1" name="email1" placeholder="Email"  style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
                     <div style={{ border: "1px solid orange" }}></div>
@@ -329,14 +334,14 @@ function CreateChildCard() {
 
                         <Form.Label column="true" sm="2" htmlFor="lastName2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Last Name: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="lastName2" name="lastName2" placeholder="Last Name" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="lastName2" name="lastName2" placeholder="Last Name" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
 
                     <Form.Group as={Row} style={{ color: "white" }}>
                         <Form.Label column="true" sm="2" htmlFor="userID" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>ID: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="userID" name="userID" placeholder="ID" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="userID" name="userID" placeholder="ID" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                         <Form.Label column="true" sm="2" htmlFor="phoneNum2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Phone Number: </Form.Label>
@@ -353,7 +358,7 @@ function CreateChildCard() {
 
                         <Form.Label column="true" sm="2" htmlFor="gender2" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Gender: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="gender2" name="gender2" placeholder="Gender" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="gender2" name="gender2" placeholder="Gender" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
 
                     </Form.Group>
@@ -382,7 +387,7 @@ function CreateChildCard() {
 
                         <Form.Label column="true" sm="2" htmlFor="Adress" style={{ fontFamily: "Roboto", fontWeight: "bold", color: "white" }}>Address: </Form.Label>
                         <Col sm="4">
-                            <Form.Control id="Adress" name="Adress" placeholder="Address" style={{ borderBottom: " 2px solid orange" }}></Form.Control>
+                            <Form.Control id="Adress" name="Adress" placeholder="Address" required style={{ borderBottom: " 2px solid orange" }}></Form.Control>
                         </Col>
                     </Form.Group>
 

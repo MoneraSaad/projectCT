@@ -22,6 +22,7 @@ router.post('/login', (req, res) => {
 
         } else {
             res.send({ success: false, error: true, info: null });
+            res.end();
         }
 
 

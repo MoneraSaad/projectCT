@@ -5,6 +5,7 @@ const ChildrenCardSchema = new mongoose.Schema({
         childName:String,
         childLastName: String,
         childID:String,
+        disabilityType:String,
         streetAdrees1: String,
         streetAdrees2: String,
         city:String,

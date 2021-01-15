@@ -82,7 +82,7 @@ function handleLogOut() {
         <Button variant="dark" size="lg" type="button" onClick={handleAccompanyingPTrack} >Track Vehicle </Button>
         <br></br>
         <br></br>
-        <a href="https://api.whatsapp.com/send?phone=+9720548145257&text=&source=&data=" className="whatsApp" target="_blank"><i class="fa fa-whatsapp my-whatsApp">Contact</i></a>
+        <a href="https://api.whatsapp.com/send?phone=+9720548145257&text=&source=&data=" className="whatsApp" target="_blank"><i className="fa fa-whatsapp my-whatsApp">Contact</i></a>
         <br></br>
         <br></br>
       </Container>

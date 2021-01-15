@@ -30,7 +30,7 @@ function ParentHomePage() {
 
                     // setAccompanyingPersonData(data.info[0]);
                     accompanyingPersonInfo.phoneNum = data.info[0].phoneNum;
-                    window.open("https://api.whatsapp.com/send?phone=+972" + accompanyingPersonInfo.phoneNum + "&text=&source=&data=");
+                    window.replace("https://api.whatsapp.com/send?phone=+972" + accompanyingPersonInfo.phoneNum + "&text=&source=&data=");
                 } else {
                     alert("couldn't get vehicle company manager phone number");
                     // setAccompanyingPersonData([]);

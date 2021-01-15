@@ -9,6 +9,7 @@ let childInfo = {
     childName: "",
     childLastName: "",
     childID: "",
+    disabilityType:"",
     streetAdrees1: "",
     streetAdrees2: "",
     city: "",
@@ -79,6 +80,7 @@ function MyChildCardInfo() {
                     childInfo.childName = data.info[0].childName;
                     childInfo.childLastName = data.info[0].childLastName;
                     childInfo.childID = data.info[0].childID;
+                    childInfo.disabilityType=data.info[0].disabilityType;
                     childInfo.streetAdrees1 = data.info[0].streetAdrees1;
                     childInfo.streetAdrees2 = data.info[0].streetAdrees2;
                     childInfo.city = data.info[0].city;
@@ -94,7 +96,7 @@ function MyChildCardInfo() {
 
                     motherInfo.firstName = data.info[2].firstName;
                     motherInfo.lastName = data.info[2].lastName;
-                    motherInfo.fatherID = data.info[2].fatherID;
+                    motherInfo.motherID = data.info[2].motherID;
                     motherInfo.phoneNum = data.info[2].phoneNum;
                     motherInfo.homeAdrees = data.info[2].homeAdrees;
                     motherInfo.email = data.info[2].email;
@@ -189,6 +191,9 @@ function MyChildCardInfo() {
                 <Form.Group as={Row} style={{ color: "white" }}>
                     <Col sm="6" ><label>City: </label> {childData.city}</Col>
                     <Col sm="6"><label>ZIP Code: </label> {childData.zipCode} </Col>
+                </Form.Group>
+                <Form.Group as={Row} style={{ color: "white" }}>
+                    <Col sm="6" ><label>Disability: </label> {childData.disabilityType}</Col>
                 </Form.Group>
                 <div style={{ border: "1px solid orange" }}></div>
                 <br></br>
