@@ -17,14 +17,7 @@ function AccompanyingPersonPage() {
 
 
   function handleAccompanyingPTrack() {
-    /*     history.replace("/AccompanyingPersonTrack"); */
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(getPosition);
-    }
-    function getPosition(position) {
-      window.open("https://maps.google.com?q=" + position.coords.latitude + "," + position.coords.longitude);
-    }
-
+       history.replace("/AccompanyingPersonTrack"); 
   }
 
   function handleWhatsapp() {

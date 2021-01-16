@@ -11,7 +11,7 @@ const ChildrenSchema = new mongoose.Schema({
         disabilityType:String,
         location1:String,
         location2:String,
-        AccompanyingPersonName:String
+        AccompanyingPersonName:String,
         
     },
     active:Boolean

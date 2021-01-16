@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { useState, useEffect } from 'react';
 import "./AllAccompanying.css";
 import { Container, Navbar, Nav, Table, Button } from 'react-bootstrap';
@@ -125,8 +125,7 @@ function AllAccompanying() {
                             <th>Father's Phone Number</th>
                             <th>Mother's Phone Number</th>
                             <th>Accompanying Person</th>
-                            {/* <th>Mother's Phone Number</th>
-                            <th>Mother's Phone Number</th> */}
+                           
                             <th>Accompanying Person PhoneNum</th>
                             <th>Child Card</th>
                         </tr>
@@ -142,4 +141,4 @@ function AllAccompanying() {
     )
 }
 
-export default AllAccompanying;
+export default AllAccompanying; */

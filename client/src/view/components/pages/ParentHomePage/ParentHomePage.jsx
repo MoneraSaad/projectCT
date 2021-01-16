@@ -97,7 +97,7 @@ function ParentHomePage() {
                 <Button variant="dark" size="lg" type="button" onClick={handleChildCardBtn}>Child Card</Button>
                 <br></br>
                 <br></br>
-                <Button variant="dark" size="lg" type="button" onClick={handleChildAttendance}>Child Attendance/Absence</Button>
+                <Button variant="dark" size="lg" type="button" onClick={handleChildAttendance}>Submit Child Attendance Status</Button>
                 <br></br>
                 <br></br>
                 <Button variant="dark" size="lg" type="button"  >Track Vehicle</Button>

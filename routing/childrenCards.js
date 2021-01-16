@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const ChildrenCardSchema = require('../schemas/ChildrenCardSchema');
 const ChildrenCardModel = mongoose.model("ChildrenCardModel", ChildrenCardSchema);
-
+const UserSchema = require('../schemas/UserSchema');
+const UserModel = mongoose.model("UserModel", UserSchema);
 
 
 //getMyChildInfo
@@ -148,6 +149,7 @@ router.post('/getAllChildrensCards', (req, res) => {
                     childLastName: item.ChildInfo.childLastName,
                     childID: item.ChildInfo.childID,
                     gender: item.ChildInfo.gender,
+                    checkBox1:item.ChildInfo.checkBox1,
                     phoneNum: item.FatherInfo.phoneNum,
                     phoneNum2: item.MotherInfo.phoneNum
                 });
@@ -238,7 +240,8 @@ router.post('/createChildCard', (req, res) => {
                 streetAdrees2: childInfo.streetAdrees2,
                 city: childInfo.city,
                 zipCode: childInfo.zipCode,
-                gender: childInfo.gender
+                gender: childInfo.gender,
+                checkBox1:[0,0,0,0,0,0,0]
             };
 
             let fatherInfo1 = {
@@ -351,6 +354,7 @@ router.post('/getChildInfo', (req, res) => {
 router.post('/getChildrensCards', (req, res) => {
 
     let childrenInformation = [];
+    let empty=["0","0","0","0","0","0","0"];
     ChildrenCardModel.find({}).then(docs => {
 
         if (docs.length > 0) {
@@ -360,13 +364,25 @@ router.post('/getChildrensCards', (req, res) => {
                     childLastName: item.ChildInfo.childLastName,
                     childID: item.ChildInfo.childID,
                     gender: item.ChildInfo.gender,
+                    checkBox1:item.ChildInfo.checkBox1,
                     phoneNum: item.FatherInfo.phoneNum,
                     phoneNum2: item.MotherInfo.phoneNum,
                     accompanyingPersonName:item.AccompanyingPersonInfo.firstName,
                     accompanyingPersonLastName:item.AccompanyingPersonInfo.lastName,
                     accompanyingPersonID:item.AccompanyingPersonInfo.userID,
                     accompanyingPersonPhoneNum:item.AccompanyingPersonInfo.phoneNum,
+                    // accompanyingPersonAttendance:empty
                 });
+                // console.log(docs[index].AccompanyingPersonInfo.userID);
+               /*  UserModel.find({ "userInfo.userID": docs[index].AccompanyingPersonInfo.userID }).then(docs2 => {
+                    if(docs2.length>0){
+                    childrenInformation.push({accompanyingPersonAttendance:docs2[0].userInfo.checkBox1});
+                    console.log(childrenInformation[index].accompanyingPersonAttendance);
+                    }else{
+                        childrenInformation[index].accompanyingPersonAttendance="0";
+                    }
+    
+                }) */
             })
             res.send({ success: true, error: null, info: childrenInformation });
             res.end();

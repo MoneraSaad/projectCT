@@ -11,6 +11,7 @@ const ChildrenCardSchema = new mongoose.Schema({
         city:String,
         zipCode:String,
         gender:String,
+        checkBox1:Array
     },
     FatherInfo:{
         firstName:String,

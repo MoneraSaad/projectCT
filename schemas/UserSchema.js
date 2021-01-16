@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
         city:String,
         streetNum:String,
         gender:String,
-		checkBox1:String
+		checkBox1:Array
 		
     },
     active:Boolean

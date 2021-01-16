@@ -9,6 +9,11 @@ function AccompanyingPersonChildCard() {
     let AccompanyingPerson = localStorage.getItem("userID");
     localStorage.removeItem("childCardNum");
     const [childrenData, setChildrenData] = useState([]);
+    let arrayAttendance=[];
+    var date = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+    var FullDate = (date + '/' + month + '/' + year);
     useEffect(() => {
        
         fetch('/api/childrenCards/getAllChildrensCards', {
@@ -29,7 +34,13 @@ function AccompanyingPersonChildCard() {
             })
     }, []);
 
-
+    childrenData.map((check, index) => {
+        if(check.checkBox1[index]===FullDate){
+        arrayAttendance[index]="Attend";
+        }else{
+            arrayAttendance[index]="Absent";
+        }
+    })
 
 
     function handleSettings() {
@@ -84,13 +95,13 @@ function AccompanyingPersonChildCard() {
 
     const renderChildren = (Child, index) => {
         return (
-            
                 <tr key={index} >
                     <td>{index + 1}</td>
                     <td>{Child.childName}</td>
                     <td>{Child.childLastName}</td>
                     <td>{Child.childID}</td>
                     <td>{Child.gender}</td>
+                    <td>{arrayAttendance[index]}</td>
                     {/* <td id={Child.phoneNum} onClick={handleFatherCall}>Contact Father</td> */}
                     <td onClick={handleFatherCall}><Button id={Child.phoneNum} variant="success" >Contact Father</Button></td>
                     <td onClick={handleMotherCall}><Button variant="success"  id={Child.phoneNum2}>Contact Mother</Button></td>
@@ -120,6 +131,7 @@ function AccompanyingPersonChildCard() {
                             <th>Last Name</th>
                             <th>ID</th>
                             <th>Gender</th>
+                            <th>Attendance Status</th>
                             <th>Father's Phone Number</th>
                             <th>Mother's Phone Number</th>
                             <th>Child Card</th>
@@ -129,7 +141,6 @@ function AccompanyingPersonChildCard() {
                         {childrenData.map(renderChildren)}
                     </tbody>
                 </Table>
-                
                 <br></br>
             </Container>
         </div>

@@ -82,12 +82,12 @@ function VehicleCompanyManager() {
                 </Navbar>
                 <h1 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman" }}>Welcome Vehicle Company Manager</h1><br></br>
 
-                <Button variant="dark" size="lg" type="button" >View\Manage Drivers</Button>
+                {/* <Button variant="dark" size="lg" type="button" >View\Manage Drivers</Button>
                 <br></br>
+                <br></br> */}
+                {/* <Button variant="dark" size="lg" type="button" >Track Vehicle</Button>
                 <br></br>
-                <Button variant="dark" size="lg" type="button" >Track Vehicle</Button>
-                <br></br>
-                <br></br>
+                <br></br> */}
                 <Button variant="dark" size="lg" type="button" onClick={handleWhatsapp}>Contact Transportation Manager</Button><br></br>
                 <br></br>
                 <br></br>

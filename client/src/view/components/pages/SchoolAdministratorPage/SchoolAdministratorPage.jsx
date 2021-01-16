@@ -75,9 +75,9 @@ function SchoolAdministratorPage() {
                 <Button variant="dark" size="lg" type="button" >Accompanying Persons List</Button>
                 <br></br>
                 <br></br>
-                <Button variant="dark" size="lg" type="button"  >Substitutes List</Button>
+                {/* <Button variant="dark" size="lg" type="button"  >Substitutes List</Button>
                 <br></br>
-                <br></br>
+                <br></br> */}
                 <Button variant="dark" size="lg" type="button" onClick={handleChildCard} >Create Child Card</Button>
                 <br></br>
                 <br></br>

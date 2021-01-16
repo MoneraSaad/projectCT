@@ -9,6 +9,12 @@ function AllChildrenCards() {
     localStorage.removeItem("childCardNum");
     let SchoolAdministrator = localStorage.getItem("userID");
     const [childrenData, setChildrenData] = useState([]);
+    let arrayChildAttendance=[];
+    let arrayAccompanyingAttendance=[];
+    var date = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+    var FullDate = (date + '/' + month + '/' + year);
     useEffect(() => {
        
         fetch('/api/childrenCards/getChildrensCards', {
@@ -28,7 +34,22 @@ function AllChildrenCards() {
                 }
             })
     }, []);
-
+console.log(childrenData);
+    childrenData.map((check, index) => {
+        if(check.checkBox1[index]===FullDate){
+        arrayChildAttendance[index]="Attend";
+        }else{
+            arrayChildAttendance[index]="Absent";
+        }
+    })
+/* 
+    childrenData.map((check, index) => {
+        if(check.accompanyingPersonAttendance[index]===FullDate){
+        arrayAccompanyingAttendance[index]="Attend";
+        }else{
+            arrayAccompanyingAttendance[index]="Absent";
+        }
+    }) */
 
 
 
@@ -95,10 +116,11 @@ function AllChildrenCards() {
                     <td>{Child.childLastName}</td>
                     <td>{Child.childID}</td>
                     <td>{Child.gender}</td>
-                    {/* <td id={Child.phoneNum} onClick={handleFatherCall}>Contact Father</td> */}
+                    <td>{arrayChildAttendance[index]}</td>
                     <td onClick={handleFatherCall}><Button id={Child.phoneNum} variant="success" >Contact Father</Button></td>
                     <td onClick={handleMotherCall}><Button variant="success"  id={Child.phoneNum2}>Contact Mother</Button></td>
                     <td>{Child.accompanyingPersonName} {Child.accompanyingPersonLastName} </td>
+                    {/* <td>{arrayAccompanyingAttendance[index]}</td> */}
                     <td onClick={handleAccompanyingCall}><Button variant="success"  id={Child.accompanyingPersonPhoneNum}>Contact Accompanying</Button></td>
                     <td onClick={handleChildCard}><Button variant="warning"  id={Child.childID} >Child Card</Button></td>
                 </tr>
@@ -126,9 +148,11 @@ function AllChildrenCards() {
                             <th>Last Name</th>
                             <th>ID</th>
                             <th>Gender</th>
+                            <th>Child Attendance</th>
                             <th>Father's Phone Number</th>
                             <th>Mother's Phone Number</th>
                             <th>Accompanying Person</th>
+                            {/* <th>Accompanying Person Attendance</th> */}
                             {/* <th>Mother's Phone Number</th>
                             <th>Mother's Phone Number</th> */}
                             <th>Accompanying Person PhoneNum</th>
