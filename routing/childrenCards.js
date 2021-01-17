@@ -354,7 +354,6 @@ router.post('/getChildInfo', (req, res) => {
 router.post('/getChildrensCards', (req, res) => {
 
     let childrenInformation = [];
-    let empty=["0","0","0","0","0","0","0"];
     ChildrenCardModel.find({}).then(docs => {
 
         if (docs.length > 0) {
@@ -371,18 +370,9 @@ router.post('/getChildrensCards', (req, res) => {
                     accompanyingPersonLastName:item.AccompanyingPersonInfo.lastName,
                     accompanyingPersonID:item.AccompanyingPersonInfo.userID,
                     accompanyingPersonPhoneNum:item.AccompanyingPersonInfo.phoneNum,
-                    // accompanyingPersonAttendance:empty
+
                 });
-                // console.log(docs[index].AccompanyingPersonInfo.userID);
-               /*  UserModel.find({ "userInfo.userID": docs[index].AccompanyingPersonInfo.userID }).then(docs2 => {
-                    if(docs2.length>0){
-                    childrenInformation.push({accompanyingPersonAttendance:docs2[0].userInfo.checkBox1});
-                    console.log(childrenInformation[index].accompanyingPersonAttendance);
-                    }else{
-                        childrenInformation[index].accompanyingPersonAttendance="0";
-                    }
-    
-                }) */
+
             })
             res.send({ success: true, error: null, info: childrenInformation });
             res.end();

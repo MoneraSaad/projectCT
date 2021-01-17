@@ -6,6 +6,7 @@ import ParentHomePage from "./view/components/pages/ParentHomePage/ParentHomePag
 import CreateChildCard from "./view/components/pages/CreateChildCard/CreateChildCard";
 import ChildCard from "./view/components/pages/ChildCard/ChildCard";
 import AllChildrenCards from "./view/components/pages/AllChildrenCards/AllChildrenCards";
+import AllAccompanying from "./view/components/pages/AllAccompanying/AllAccompanying";
 
 import SettingsPage from "./view/components/pages/SettingsPage/SettingsPage";
 import SettingsPageUsers from "./view/components/pages/SettingsPageUsers/SettingsPageUsers";
@@ -26,7 +27,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 import './App.css';
 
@@ -130,6 +131,9 @@ function App() {
             <SettingsPageAccompanyingPerson />
           </Route>
           
+          <Route path="/AllAccompanying">
+            <AllAccompanying />
+          </Route>
           <Route path="/ChildCard">
             <ChildCard />
           </Route>

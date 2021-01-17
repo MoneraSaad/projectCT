@@ -30,17 +30,17 @@ function TransportationManager() {
 
 }
 
-  function handleTransportationManagerTrack() {
-    /*  if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getPosition);
-      }
-      function getPosition(position) {
-        window.open("https://maps.google.com?q="+position.coords.latitude+","+position.coords.longitude );
-        console.log(position.coords.latitude, position.coords.longitude);
-      }  */
+  // function handleTransportationManagerTrack() {
+  //   /*  if (navigator.geolocation) {
+  //       navigator.geolocation.getCurrentPosition(getPosition);
+  //     }
+  //     function getPosition(position) {
+  //       window.open("https://maps.google.com?q="+position.coords.latitude+","+position.coords.longitude );
+  //       console.log(position.coords.latitude, position.coords.longitude);
+  //     }  */
 
 
-  }
+  // }
 
   function handleSettings(){
     history.replace("/SettingsPageUsers");

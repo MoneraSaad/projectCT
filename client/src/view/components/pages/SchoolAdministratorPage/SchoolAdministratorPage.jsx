@@ -8,6 +8,10 @@ function SchoolAdministratorPage() {
     let history = useHistory();
     let SchoolAdministratorID = localStorage.getItem("userID");
 
+    function handleAccompanyingsList(){
+        history.replace("/AllAccompanying");
+    }
+
     function handleChildrenCardsBtn() {
         history.replace("/AllChildrenCards");
       }
@@ -72,7 +76,7 @@ function SchoolAdministratorPage() {
                 <Button variant="dark" size="lg" type="button" onClick={handleChildrenCardsBtn}>Children List</Button>
                 <br></br>
                 <br></br>
-                <Button variant="dark" size="lg" type="button" >Accompanying Persons List</Button>
+                <Button variant="dark" size="lg" type="button" onClick={handleAccompanyingsList} >Accompanying Persons List</Button>
                 <br></br>
                 <br></br>
                 {/* <Button variant="dark" size="lg" type="button"  >Substitutes List</Button>

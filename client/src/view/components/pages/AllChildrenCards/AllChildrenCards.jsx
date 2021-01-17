@@ -10,7 +10,6 @@ function AllChildrenCards() {
     let SchoolAdministrator = localStorage.getItem("userID");
     const [childrenData, setChildrenData] = useState([]);
     let arrayChildAttendance=[];
-    let arrayAccompanyingAttendance=[];
     var date = new Date().getDate();
     var month = new Date().getMonth() + 1;
     var year = new Date().getFullYear();
@@ -34,7 +33,7 @@ function AllChildrenCards() {
                 }
             })
     }, []);
-console.log(childrenData);
+
     childrenData.map((check, index) => {
         if(check.checkBox1[index]===FullDate){
         arrayChildAttendance[index]="Attend";
@@ -42,16 +41,6 @@ console.log(childrenData);
             arrayChildAttendance[index]="Absent";
         }
     })
-/* 
-    childrenData.map((check, index) => {
-        if(check.accompanyingPersonAttendance[index]===FullDate){
-        arrayAccompanyingAttendance[index]="Attend";
-        }else{
-            arrayAccompanyingAttendance[index]="Absent";
-        }
-    }) */
-
-
 
     function handleSettings() {
         history.replace("/SettingsPageUsers");
@@ -120,7 +109,6 @@ console.log(childrenData);
                     <td onClick={handleFatherCall}><Button id={Child.phoneNum} variant="success" >Contact Father</Button></td>
                     <td onClick={handleMotherCall}><Button variant="success"  id={Child.phoneNum2}>Contact Mother</Button></td>
                     <td>{Child.accompanyingPersonName} {Child.accompanyingPersonLastName} </td>
-                    {/* <td>{arrayAccompanyingAttendance[index]}</td> */}
                     <td onClick={handleAccompanyingCall}><Button variant="success"  id={Child.accompanyingPersonPhoneNum}>Contact Accompanying</Button></td>
                     <td onClick={handleChildCard}><Button variant="warning"  id={Child.childID} >Child Card</Button></td>
                 </tr>

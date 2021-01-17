@@ -357,4 +357,32 @@ router.post('/register', (req, res) => {
     })
 }
 )
+
+//getChildrensCards for the school Administrator
+router.post('/getAccompaningsList', (req, res) => {
+    let role="Accompanying Person";
+    let accompanyingsInformation = [];
+    UserModel.find({"userInfo.userRole":role}).then(docs => {
+
+        if (docs.length > 0) {
+            docs.map((item, index) => {
+                accompanyingsInformation.push({
+                    userName: item.userInfo.userName,
+                    userLastName: item.userInfo.userLastName,
+                    userID: item.userInfo.userID,
+                    gender: item.userInfo.gender,
+                    AccompanyingAttendance:item.userInfo.checkBox1,
+                    phoneNumber: item.userInfo.phoneNumber,
+                });
+            })
+            res.send({ success: true, error: null, info: accompanyingsInformation });
+            res.end();
+        } else {
+            res.send({ success: false, error: true, info: null });
+            res.end();
+        }
+
+    })
+}
+)
 module.exports = router;

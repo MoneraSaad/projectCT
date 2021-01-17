@@ -1,4 +1,4 @@
-/* import React from 'react';
+import React from 'react';
 import { useState, useEffect } from 'react';
 import "./AllAccompanying.css";
 import { Container, Navbar, Nav, Table, Button } from 'react-bootstrap';
@@ -6,12 +6,17 @@ import { useHistory } from "react-router-dom";
 
 function AllAccompanying() {
     const history = useHistory();
-    localStorage.removeItem("childCardNum");
+    localStorage.removeItem("accompanyingNum");
     let SchoolAdministrator = localStorage.getItem("userID");
-    const [accompanyingsData, setAccompanyingsData] = useState([]);
+    const [accompanyingData, setAccompanyingData] = useState([]);
+    let arrayAccompanyingAttendance=[];
+    var date = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+    var FullDate = (date + '/' + month + '/' + year);
     useEffect(() => {
        
-        fetch('/api/users/getAllAccompanying', {
+        fetch('/api/users/getAccompaningsList', {
             method: 'POST',
             body: JSON.stringify({}),
             headers: {
@@ -21,14 +26,22 @@ function AllAccompanying() {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    setAccompanyingsData(data.info);
+                    setAccompanyingData(data.info);
                 } else {
-                    setAccompanyingsData([]);
-                    alert("couldn't get Accompanyings Data");
+                    setAccompanyingData([]);
+                    alert("you don't have any assigned children yet");
                 }
             })
     }, []);
+console.log(accompanyingData);
 
+    accompanyingData.map((check, index) => {
+        if(check.AccompanyingAttendance[index]===FullDate){
+        arrayAccompanyingAttendance[index]="Attend";
+        }else{
+            arrayAccompanyingAttendance[index]="Absent";
+        }
+    }) 
 
 
 
@@ -62,41 +75,22 @@ function AllAccompanying() {
                 }
             });
     }
-
-    function handleFatherCall(e) {
-        const fatherPhone=e.target.id;
-       window.open("https://api.whatsapp.com/send?phone=+972" + fatherPhone + "&text=&source=&data=");
-    }
-
-    function handleMotherCall(e) {
-        const motherPhone=e.target.id;
-        window.open("https://api.whatsapp.com/send?phone=+972" + motherPhone + "&text=&source=&data=");
-    }
-    
     function handleAccompanyingCall(e) {
         const AccompanyingPhone=e.target.id;
         window.open("https://api.whatsapp.com/send?phone=+972" + AccompanyingPhone + "&text=&source=&data=");
     }
-    function handleChildCard(e){
-        let theChildID=e.target.id;
-        localStorage.removeItem("childCardNum");
-        localStorage.setItem("childCardNum",theChildID);
-        history.replace("/ChildCard");
-    }
 
-    
-
-    const renderAccompanyings = (accompanying, index) => {
+    const renderAccompanyings = (Accompanying, index) => {
         return (
             
                 <tr key={index} >
                     <td>{index + 1}</td>
-                    <td>{accompanying.accompanyingPersonName}</td>
-                    <td>{accompanying.accompanyingPersonLastName}</td>
-                    <td>{accompanying.userID}</td>
-                    <td>{accompanying.gender}</td>
-                    <td onClick={handleAccompanyingCall}><Button variant="success"  id={Child.accompanyingPersonPhoneNum}>Contact Accompanying</Button></td>
-                    <td onClick={handleChildCard}><Button variant="warning"  id={Child.childID} >Child Card</Button></td>
+                    <td>{Accompanying.userName}</td>
+                    <td>{Accompanying.userLastName}</td>
+                    <td>{Accompanying.userID}</td>
+                    <td>{Accompanying.gender}</td>
+                    <td>{arrayAccompanyingAttendance[index]}</td> 
+                    <td onClick={handleAccompanyingCall}><Button variant="success"  id={Accompanying.phoneNumber}>Contact Accompanying</Button></td>
                 </tr>
          
         )
@@ -113,7 +107,7 @@ function AllAccompanying() {
                         <Nav.Link href="#LogOut" onClick={handleLogOut}>Log Out</Nav.Link>
                     </Nav>
                 </Navbar>
-                <h3 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman",textAlign:"center" }}>Children Cards</h3><br></br>
+                <h3 style={{ fontWeight: "bold", color: "#ffa500", fontSize: "40px", fontFamily: "Times New Roman",textAlign:"center" }}>Accompanying Persons List</h3><br></br>
                 <Table striped bordered hover responsive variant="dark" style={{ color: "white" }}>
                     <thead>
                         <tr>
@@ -122,16 +116,12 @@ function AllAccompanying() {
                             <th>Last Name</th>
                             <th>ID</th>
                             <th>Gender</th>
-                            <th>Father's Phone Number</th>
-                            <th>Mother's Phone Number</th>
-                            <th>Accompanying Person</th>
-                           
-                            <th>Accompanying Person PhoneNum</th>
-                            <th>Child Card</th>
+                            <th>Attendance</th>
+                            <th>Phone Number</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {accompanyingsData.map(renderAccompanyings)}
+                        {accompanyingData.map(renderAccompanyings)}
                     </tbody>
                 </Table>
                 
@@ -141,4 +131,4 @@ function AllAccompanying() {
     )
 }
 
-export default AllAccompanying; */
+export default AllAccompanying;

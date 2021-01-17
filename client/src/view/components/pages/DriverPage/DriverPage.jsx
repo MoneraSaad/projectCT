@@ -8,10 +8,10 @@ import { useHistory } from "react-router-dom";
 function DriverPage() {
     const history = useHistory();
     let driverID = localStorage.getItem("userID");
-    function handleDriverAttendanceBtn() {
+  /*   function handleDriverAttendanceBtn() {
         history.replace("/DriverAttendancePage");
 
-    }
+    } */
 
     function handleWhatsapp() {
         let VehicleCompanyManager;
