@@ -27,7 +27,7 @@ function ParentHomePage() {
 
                     // setAccompanyingPersonData(data.info[0]);
                     accompanyingPersonInfo.phoneNum = data.info[0].phoneNum;
-                    window.replace("https://api.whatsapp.com/send?phone=+972" + accompanyingPersonInfo.phoneNum + "&text=&source=&data=");
+                    window.open("https://api.whatsapp.com/send?phone=+972" + accompanyingPersonInfo.phoneNum + "&text=&source=&data=");
                 } else {
                     alert("couldn't get vehicle company manager phone number");
                     // setAccompanyingPersonData([]);
@@ -84,7 +84,7 @@ function ParentHomePage() {
 
     return (
         <div >
-            <Container style={{ border: "solid #ffa500", borderColor: "#ffa500", textAlign: "center", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
+            <Container fluid style={{ border: "solid #ffa500", borderColor: "#ffa500", textAlign: "center", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
                 <Navbar className="mb-3" aria-label="Toolbar with Button groups">
                     <Nav className="mr-auto">
                         <Nav.Link href="#home" onClick={handleHomeBtn}>Home</Nav.Link>

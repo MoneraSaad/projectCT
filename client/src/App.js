@@ -35,7 +35,7 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
+       {/*  <nav>
           <ul>
             <li>
               <Link to="/LogInPage">login</Link>
@@ -114,7 +114,7 @@ function App() {
             
 			
           </ul>
-        </nav>
+        </nav> */}
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>

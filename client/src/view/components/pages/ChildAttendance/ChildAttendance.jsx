@@ -150,7 +150,7 @@ function ChildAttendance() {
 
 
         <div >
-            <Container style={{ color: "white", border: "solid #ffa500", borderColor: "#ffa500", textAlign: "center", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
+            <Container fluid style={{ color: "white", border: "solid #ffa500", borderColor: "#ffa500", textAlign: "center", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
                 <Navbar className="mb-3" aria-label="Toolbar with Button groups">
                     <Nav className="mr-auto">
                         <Nav.Link href="#home" onClick={handleHomePage} >Home</Nav.Link>

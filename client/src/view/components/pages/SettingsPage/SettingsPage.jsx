@@ -178,7 +178,7 @@ function SettingsPage() {
     return (
         <div>
 
-            <Container style={{ border: "solid #ffa500", borderColor: "#ffa500", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
+            <Container fluid style={{ border: "solid #ffa500", borderColor: "#ffa500", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
                 <Navbar className="mb-3" aria-label="Toolbar with Button groups">
                     <Nav className="mr-auto">
                         <Nav.Link href="#home" onClick={handleHomeBtn}>Home</Nav.Link>

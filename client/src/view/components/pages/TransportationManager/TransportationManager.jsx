@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function TransportationManager() {
   const history = useHistory();
-
+  let transportationManagerID = localStorage.getItem("userID");
   function handleWhatsapp() {
     let vehicleCompanyManager;
     let transportationManagerID = localStorage.getItem("userID");
@@ -51,7 +51,7 @@ function handleHome() {
 }
 function handleLogOut() {
      
-  const userID = TransportationManager;
+  const userID = transportationManagerID;
 
   //fetch to logout user 
   fetch('/api/users/logout', {
@@ -78,7 +78,7 @@ function handleLogOut() {
   return (
 
     <div >
-      <Container style={{ border: "solid #ffa500", borderColor: "#ffa500", textAlign: "center", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
+      <Container fluid style={{ border: "solid #ffa500", borderColor: "#ffa500", textAlign: "center", background: `url('${process.env.PUBLIC_URL}/l.png')` }}>
         <Navbar className="mb-3" aria-label="Toolbar with Button groups">
           <Nav className="mr-auto">
             <Nav.Link href="#home" onClick={handleHome}>Home</Nav.Link>

@@ -201,8 +201,7 @@ router.post('/getMyInfo', (req, res) => {
 //saving the accompanying person status 
 router.post('/AccompanyingAttendance', (req, res) => {
     const { myCheckBox, AccompanyingPerson } = req.body;
-    console.log(myCheckBox);
-    console.log(AccompanyingPerson);
+
     UserModel.find({ "userInfo.userID": AccompanyingPerson }).then(docs => {
         if (docs.length > 0) {
             UserModel.updateOne({ "userInfo.userID": AccompanyingPerson }, { "userInfo.checkBox1": myCheckBox }).then(docs2 => {
@@ -225,11 +224,9 @@ router.post('/AccompanyingAttendance', (req, res) => {
 //saving the child status 
 router.post('/mychildAttendance', (req, res) => {
     const { myCheckBox, myParentID} = req.body;
-    console.log(myCheckBox);
-    console.log(myParentID);
     ChildrenCardModel.find({ "FatherInfo.fatherID": myParentID }).then(docs => {
         if (docs.length > 0) {
-            console.log(docs[0].ChildInfo.childID);
+ 
             let myChildID = docs[0].ChildInfo.childID;
             ChildrenCardModel.updateOne({ "ChildInfo.childID": myChildID }, { "ChildInfo.checkBox1": myCheckBox }).then(docs2 => {
                 if (docs2) {
@@ -243,7 +240,6 @@ router.post('/mychildAttendance', (req, res) => {
         } else {
             ChildrenCardModel.find({ "MotherInfo.motherID": myParentID }).then(docs3=> {
                 if (docs3.length > 0) {
-                    console.log(docs3[0].ChildInfo.childID);
                     let myChildID = docs3[0].ChildInfo.childID;
                     ChildrenCardModel.updateOne({ "ChildInfo.childID": myChildID }, { "ChildInfo.checkBox1": myCheckBox }).then(docs4 => {
                         if (docs4) {
